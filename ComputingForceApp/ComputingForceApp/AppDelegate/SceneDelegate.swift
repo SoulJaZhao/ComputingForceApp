@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FLEX
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,10 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let tabbarViewModel = BaseTabBarViewModel()
-        let tabbarController = BaseTabBarController(viewModel: tabbarViewModel)
-        window?.rootViewController = tabbarController
+        let viewModel = BaseTabBarViewModel()
+        let tabarController = BaseTabBarController(viewModel: viewModel)
+        
+        window?.rootViewController = tabarController
         window?.makeKeyAndVisible()
+        
+        AppContext.context.router.mainTabbarController = tabarController
+        
+        initSDKs()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,3 +62,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    fileprivate func initSDKs() {
+        FLEXManager.shared.showExplorer()
+    }
+}
