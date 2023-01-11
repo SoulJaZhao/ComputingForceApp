@@ -11,7 +11,7 @@ DEPENDENCIES:
   - Alamofire (= 5.6.4)
   - FLEX
   - NVActivityIndicatorView (= 5.1.1)
-  - Swinject
+  - Swinject (= 2.8.2)
   - URLNavigator (= 2.4.1)
 
 SPEC REPOS:
@@ -29,6 +29,6 @@ SPEC CHECKSUMS:
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: 6378ec615f6104b37bd5bead936606ee429818d9
+PODFILE CHECKSUM: 78bed825fb0119124872cb0805eff62caed909f9
 
 COCOAPODS: 1.11.3
