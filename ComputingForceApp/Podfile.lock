@@ -1,15 +1,25 @@
 PODS:
   - Alamofire (5.6.4)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - FLEX (5.22.10)
+  - Hue (5.0.0)
+  - KeychainAccess (4.2.2)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - SwiftAlgorithms (1.0.0)
   - Swinject (2.8.2)
   - URLNavigator (2.4.1)
 
 DEPENDENCIES:
   - Alamofire (= 5.6.4)
+  - Charts
   - FLEX
+  - Hue (= 5.0.0)
+  - KeychainAccess (= 4.2.2)
   - NVActivityIndicatorView (= 5.1.1)
   - Swinject (= 2.8.2)
   - URLNavigator (= 2.4.1)
@@ -17,18 +27,26 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Charts
     - FLEX
+    - Hue
+    - KeychainAccess
     - NVActivityIndicatorView
+    - SwiftAlgorithms
     - Swinject
     - URLNavigator
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   FLEX: f21ee4f498eed3f8a1eded66b21939fd3b7a22ce
+  Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: 78bed825fb0119124872cb0805eff62caed909f9
+PODFILE CHECKSUM: 34c7b8e91e41010cfa1f6542ddfc96bc85a14878
 
 COCOAPODS: 1.11.3
