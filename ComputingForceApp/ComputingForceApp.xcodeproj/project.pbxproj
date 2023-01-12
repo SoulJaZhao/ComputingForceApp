@@ -22,6 +22,7 @@
 		2118221F2965D37400BF8490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2118221E2965D37400BF8490 /* Assets.xcassets */; };
 		211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211822202965D37400BF8490 /* LaunchScreen.storyboard */; };
 		21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E668082965E4900061AE89 /* BaseNavigationController.swift */; };
+		F1C7ABF8296E84AB001FB5A1 /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7ABF7296E84AB001FB5A1 /* UIControlExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2AE057A0E7E0C9A008695237 /* Pods-ComputingForceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.release.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.release.xcconfig"; sourceTree = "<group>"; };
 		482C5787E033E7B2B4B042D3 /* Pods_ComputingForceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputingForceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03147916932DCE5D7AD0A0D /* Pods-ComputingForceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.debug.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F1C7ABF7296E84AB001FB5A1 /* UIControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		2110B2C5296D9B2D000B1B1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				2110B2D6296DA9E7000B1B1C /* Landing */,
+				F1B42CFE29700FCD00B08A25 /* Authentication */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -179,6 +181,7 @@
 		211822142965D37300BF8490 /* ComputingForceApp */ = {
 			isa = PBXGroup;
 			children = (
+				F1C7ABF5296E842D001FB5A1 /* Extension */,
 				2110B2C5296D9B2D000B1B1C /* Module */,
 				21E668062965DDD90061AE89 /* AppDelegate */,
 				21E667FD2965D9750061AE89 /* Base */,
@@ -225,6 +228,30 @@
 				482C5787E033E7B2B4B042D3 /* Pods_ComputingForceApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1B42CFE29700FCD00B08A25 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2110B2D6296DA9E7000B1B1C /* Landing */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F1C7ABF5296E842D001FB5A1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F1C7ABF6296E8441001FB5A1 /* UIControl */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F1C7ABF6296E8441001FB5A1 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				F1C7ABF7296E84AB001FB5A1 /* UIControlExtension.swift */,
+			);
+			path = UIControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +376,7 @@
 				2110B2D5296DA7D9000B1B1C /* Router.swift in Sources */,
 				2110B2CD296DA186000B1B1C /* BaseTabBarController.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
+				F1C7ABF8296E84AB001FB5A1 /* UIControlExtension.swift in Sources */,
 				2110B2DE296DAA2D000B1B1C /* BaseViewController.swift in Sources */,
 				21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */,
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,

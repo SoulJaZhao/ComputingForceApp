@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     
     let viewModel: ViewModelType
+    var cancellables = Set<AnyCancellable>()
     
     init(viewModel:ViewModelType) {
         self.viewModel = viewModel
@@ -23,19 +25,10 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bind(viewModel: viewModel, storeBindingsIn: &cancellables)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    /// Entry point for data binding in both `view to viewModel` and `viewModel to view` directions.
+    open func bind(viewModel: ViewModelType, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
     }
-    */
-
 }
