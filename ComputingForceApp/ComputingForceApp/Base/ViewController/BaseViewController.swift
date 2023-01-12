@@ -11,7 +11,7 @@ import Combine
 class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     
     let viewModel: ViewModelType
-    var cancellables = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
     
     init(viewModel:ViewModelType) {
         self.viewModel = viewModel
@@ -25,10 +25,11 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(viewModel: viewModel, storeBindingsIn: &cancellables)
+        bind(viewModel: viewModel, storeBindingsIn: &subscriptions)
     }
     
     /// Entry point for data binding in both `view to viewModel` and `viewModel to view` directions.
     open func bind(viewModel: ViewModelType, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
+        
     }
 }

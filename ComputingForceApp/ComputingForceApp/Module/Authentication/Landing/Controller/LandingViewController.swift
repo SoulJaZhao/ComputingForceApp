@@ -6,24 +6,54 @@
 //
 
 import UIKit
+import Combine
 
 class LandingViewController: BaseViewController<LandingViewModel> {
-
+    @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var signUpBtn: UIButton!
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func bind(viewModel: LandingViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
+        super.bind(viewModel: viewModel, storeBindingsIn: &subscriptions)
+        
+        viewModel
+            .transitionPublisher
+            .receive(on: RunLoop.main)
+            .sink { transition in
+                switch transition {
+                case .signIn:
+                    AppContext.context.router.transitionEvent.send(.signIn)
+                case .signUp:
+                    AppContext.context.router.transitionEvent.send(.signUp)
+                }
+            }
+            .store(in: &subscriptions)
     }
-    */
-
+    
+    private func setupUI() {
+        signInBtn.setTitle(Localization.text(key: "SignIn"), for: .normal)
+        signUpBtn.setTitle(Localization.text(key: "SignUp"), for: .normal)
+        
+        signInBtn
+            .publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.viewOutputSubject.send(.transition(.signIn))
+            }
+            .store(in: &subscriptions)
+        
+        signUpBtn
+            .publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.viewOutputSubject.send(.transition(.signUp))
+            }
+            .store(in: &subscriptions)
+    }
 }

@@ -12,6 +12,8 @@ import URLNavigator
 final class Router {
     enum Route: String {
         case landing = "app://landing"
+        case signIn = "app://signIn"
+        case signUp = "app://signUp"
     }
     
     var mainTabbarController: BaseTabBarController?
@@ -39,6 +41,14 @@ final class Router {
             
             mainTabbarController?.selectedIndex = 0
             navigator.present(landingViewController, wrap: BaseNavigationController.self)
+        case .signIn:
+            let loginViewModel = LoginViewModel()
+            let loginViewController = LoginViewController(viewModel: loginViewModel)
+            navigator.push(loginViewController)
+        case .signUp:
+            let signUpViewModel = SignUpViewModel()
+            let signUpViewController = SignUpViewController(viewModel: signUpViewModel)
+            navigator.push(signUpViewController)
         }
     }
 }

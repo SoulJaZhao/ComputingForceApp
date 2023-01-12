@@ -17,6 +17,14 @@
 		2110B2DE296DAA2D000B1B1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2DD296DAA2D000B1B1C /* BaseViewController.swift */; };
 		2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2E0296DABB6000B1B1C /* BaseViewModel.swift */; };
 		2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2E2296DABD2000B1B1C /* LandingViewModel.swift */; };
+		2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2E6297011BB000B1B1C /* LoginViewController.swift */; };
+		2110B2E9297011BB000B1B1C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2110B2E7297011BB000B1B1C /* LoginViewController.xib */; };
+		2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2EB297011F5000B1B1C /* LoginViewModel.swift */; };
+		2110B2FB29704357000B1B1C /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B2FA29704357000B1B1C /* Localization.swift */; };
+		2110B2FF29704939000B1B1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2110B30129704939000B1B1C /* Localizable.strings */; };
+		2110B30929704C02000B1B1C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B30729704C02000B1B1C /* SignUpViewController.swift */; };
+		2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2110B30829704C02000B1B1C /* SignUpViewController.xib */; };
+		2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2110B30B29704C10000B1B1C /* SignUpViewModel.swift */; };
 		211822162965D37300BF8490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211822152965D37300BF8490 /* AppDelegate.swift */; };
 		211822182965D37300BF8490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211822172965D37300BF8490 /* SceneDelegate.swift */; };
 		2118221F2965D37400BF8490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2118221E2965D37400BF8490 /* Assets.xcassets */; };
@@ -35,6 +43,16 @@
 		2110B2DD296DAA2D000B1B1C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2110B2E0296DABB6000B1B1C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		2110B2E2296DABD2000B1B1C /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		2110B2E6297011BB000B1B1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2110B2E7297011BB000B1B1C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2110B2EB297011F5000B1B1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2110B2FA29704357000B1B1C /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2110B30029704939000B1B1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2110B3022970496C000B1B1C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2110B3032970496C000B1B1C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2110B30729704C02000B1B1C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2110B30829704C02000B1B1C /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		2110B30B29704C10000B1B1C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		211822122965D37300BF8490 /* ComputingForceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputingForceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211822152965D37300BF8490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		211822172965D37300BF8490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +178,66 @@
 			path = VIewModel;
 			sourceTree = "<group>";
 		};
+		2110B2E42970119B000B1B1C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2110B2EA297011D3000B1B1C /* ViewModel */,
+				2110B2E5297011A7000B1B1C /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2110B2E5297011A7000B1B1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2110B2E6297011BB000B1B1C /* LoginViewController.swift */,
+				2110B2E7297011BB000B1B1C /* LoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2110B2EA297011D3000B1B1C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2110B2EB297011F5000B1B1C /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2110B2F929704327000B1B1C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2110B2FA29704357000B1B1C /* Localization.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2110B30429704BD6000B1B1C /* SIgnUp */ = {
+			isa = PBXGroup;
+			children = (
+				2110B30629704BED000B1B1C /* Controller */,
+				2110B30529704BE6000B1B1C /* ViewModel */,
+			);
+			path = SIgnUp;
+			sourceTree = "<group>";
+		};
+		2110B30529704BE6000B1B1C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2110B30B29704C10000B1B1C /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2110B30629704BED000B1B1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2110B30729704C02000B1B1C /* SignUpViewController.swift */,
+				2110B30829704C02000B1B1C /* SignUpViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		211822092965D37300BF8490 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +259,7 @@
 		211822142965D37300BF8490 /* ComputingForceApp */ = {
 			isa = PBXGroup;
 			children = (
+				2110B2F929704327000B1B1C /* Tools */,
 				F1C7ABF5296E842D001FB5A1 /* Extension */,
 				2110B2C5296D9B2D000B1B1C /* Module */,
 				21E668062965DDD90061AE89 /* AppDelegate */,
@@ -188,6 +267,7 @@
 				2118221E2965D37400BF8490 /* Assets.xcassets */,
 				211822202965D37400BF8490 /* LaunchScreen.storyboard */,
 				211822232965D37400BF8490 /* Info.plist */,
+				2110B30129704939000B1B1C /* Localizable.strings */,
 			);
 			path = ComputingForceApp;
 			sourceTree = "<group>";
@@ -233,6 +313,8 @@
 		F1B42CFE29700FCD00B08A25 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				2110B30429704BD6000B1B1C /* SIgnUp */,
+				2110B2E42970119B000B1B1C /* Login */,
 				2110B2D6296DA9E7000B1B1C /* Landing */,
 			);
 			path = Authentication;
@@ -298,6 +380,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 211822092965D37300BF8490;
 			productRefGroup = 211822132965D37300BF8490 /* Products */;
@@ -314,8 +397,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2110B2FF29704939000B1B1C /* Localizable.strings in Resources */,
+				2110B2E9297011BB000B1B1C /* LoginViewController.xib in Resources */,
 				2110B2DC296DAA1F000B1B1C /* LandingViewController.xib in Resources */,
 				211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */,
+				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
 				2118221F2965D37400BF8490 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,16 +456,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				211822162965D37300BF8490 /* AppDelegate.swift in Sources */,
+				2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */,
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
 				2110B2D5296DA7D9000B1B1C /* Router.swift in Sources */,
 				2110B2CD296DA186000B1B1C /* BaseTabBarController.swift in Sources */,
+				2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
 				F1C7ABF8296E84AB001FB5A1 /* UIControlExtension.swift in Sources */,
 				2110B2DE296DAA2D000B1B1C /* BaseViewController.swift in Sources */,
+				2110B30929704C02000B1B1C /* SignUpViewController.swift in Sources */,
 				21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */,
+				2110B2FB29704357000B1B1C /* Localization.swift in Sources */,
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,
+				2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */,
 				2110B2D1296DA1C6000B1B1C /* BaseTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,10 +478,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2110B30129704939000B1B1C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2110B30029704939000B1B1C /* en */,
+				2110B3032970496C000B1B1C /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		211822202965D37400BF8490 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				211822212965D37400BF8490 /* Base */,
+				2110B3022970496C000B1B1C /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -402,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -448,6 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -462,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -502,6 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -522,6 +627,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ComputingForceApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Power;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -550,6 +656,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ComputingForceApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Power;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

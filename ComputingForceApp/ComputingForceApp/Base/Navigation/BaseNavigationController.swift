@@ -12,6 +12,7 @@ class BaseNavigationController: UINavigationController {
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         self.modalPresentationStyle = .fullScreen
+        self.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,6 +23,7 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .purple
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         navigationBar.tintColor = .white
         navigationBar.standardAppearance = appearance
