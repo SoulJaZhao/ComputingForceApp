@@ -11,5 +11,6 @@ target 'ComputingForceApp' do
     pod 'KeychainAccess', '4.2.2'
     pod 'Hue', '5.0.0'
     pod 'Charts', '4.1.0'
+    pod "FGRoute"
     pod 'FLEX', :configurations => ['Debug']
 end
