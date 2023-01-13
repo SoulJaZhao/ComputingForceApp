@@ -11,19 +11,26 @@ import URLNavigator
 
 final class Router {
     enum Route: String {
-        case landing = "app://landing"
-        case signIn = "app://signIn"
-        case signUp = "app://signUp"
+        case launchView     = "app://launchView"
+        case mainView       = "app://mainView"
+        case landing        = "app://landing"
+        case signIn         = "app://signIn"
+        case signUp         = "app://signUp"
     }
     
     var mainTabbarController: BaseTabBarController?
     private let navigator: Navigator
     private var cancellables = Set<AnyCancellable>()
+    private var keyWindow: UIWindow {
+        UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow(frame: .zero)
+    }
     
     let transitionEvent: PassthroughSubject<Router.Route, Never> = PassthroughSubject()
     
     init() {
         navigator = Navigator()
+        
+        registerViewControllers()
         
         transitionEvent
             .receive(on: RunLoop.main)
@@ -33,12 +40,30 @@ final class Router {
             .store(in: &cancellables)
     }
     
+    public func getViewController(route: Router.Route) -> UIViewController? {
+        return navigator.viewController(for: route.rawValue)
+    }
+    
+    private func registerViewControllers() {
+        navigator.register(Route.launchView.rawValue) { _, _, _ in
+            let viewModel = LaunchViewModel()
+            let launchViewController = LaunchViewController(viewModel: viewModel)
+            return launchViewController
+        }
+
+        navigator.register(Route.mainView.rawValue) { _, _, _ in
+            let viewModel = BaseTabBarViewModel()
+            let tabarController = BaseTabBarController(viewModel: viewModel)
+            self.mainTabbarController = tabarController
+            return self.mainTabbarController
+        }
+    }
+    
     private func transitionEventHandler(route: Route) {
         switch route {
         case .landing:
             let landingViewModel = LandingViewModel()
             let landingViewController = LandingViewController(viewModel: landingViewModel)
-            
             mainTabbarController?.selectedIndex = 0
             navigator.present(landingViewController, wrap: BaseNavigationController.self)
         case .signIn:
@@ -49,6 +74,10 @@ final class Router {
             let signUpViewModel = SignUpViewModel()
             let signUpViewController = SignUpViewController(viewModel: signUpViewModel)
             navigator.push(signUpViewController)
+        case .mainView:
+            self.keyWindow.rootViewController = self.getViewController(route: .mainView)
+        case .launchView:
+            break
         }
     }
 }

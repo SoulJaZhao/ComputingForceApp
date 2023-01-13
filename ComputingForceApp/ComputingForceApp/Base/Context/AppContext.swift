@@ -19,6 +19,7 @@ final class AppContext {
     
     let dependencyInjectionContainer: Container
     let router: Router
+    let theme: Theme
     
     let appEventSubject: PassthroughSubject<AppEventType, Never> = PassthroughSubject()
     private var cancellables = Set<AnyCancellable>()
@@ -26,6 +27,7 @@ final class AppContext {
     private init() {
         dependencyInjectionContainer = Container()
         router = Router()
+        theme = Theme()
         
         appEventSubject
             .sink { [weak self] event in

@@ -49,6 +49,18 @@ class LandingViewController: BaseViewController<LandingViewModel> {
     private func setupUI() {
         signInBtn.setTitle(Localization.text(key: "SignIn"), for: .normal)
         signUpBtn.setTitle(Localization.text(key: "SignUp"), for: .normal)
+        signInBtn.titleLabel?.font = AppContext.context.theme.largeBoldFont
+        signUpBtn.titleLabel?.font = AppContext.context.theme.largeBoldFont
+        signInBtn.applyGradient(colors: [AppContext.context.theme.blueButtonGradientStartColor, AppContext.context.theme.blueButtonGradientEndColor])
+        signUpBtn.setBackgroundColor(color: AppContext.context.theme.whiteColor, forState: .normal)
+        signInBtn.setTitleColor(AppContext.context.theme.whiteColor, for: .normal)
+        signUpBtn.setTitleColor(AppContext.context.theme.blackColor, for: .normal)
+        signInBtn.layer.cornerRadius = 8
+        signInBtn.layer.masksToBounds = true
+        signInBtn.clipsToBounds = true
+        signUpBtn.layer.cornerRadius = 8
+        signUpBtn.layer.masksToBounds = true
+        signUpBtn.clipsToBounds = true
         
         signInBtn
             .publisher(for: .touchUpInside)

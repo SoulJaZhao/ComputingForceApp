@@ -20,13 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewModel = BaseTabBarViewModel()
-        let tabarController = BaseTabBarController(viewModel: viewModel)
-        
-        window?.rootViewController = tabarController
+        window?.rootViewController = AppContext.context.router.getViewController(route: .launchView)
         window?.makeKeyAndVisible()
-        
-        AppContext.context.router.mainTabbarController = tabarController
         
         initSDKs()
     }
