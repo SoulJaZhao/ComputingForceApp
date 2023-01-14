@@ -21,11 +21,14 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .purple
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
-        navigationBar.tintColor = .white
+        let theme = AppContext.context.theme
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = theme.navigationBarColor
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : theme.blackColor]
+        
+        navigationBar.tintColor = theme.blackColor
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance

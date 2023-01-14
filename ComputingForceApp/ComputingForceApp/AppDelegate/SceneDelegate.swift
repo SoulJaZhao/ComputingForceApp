@@ -7,6 +7,7 @@
 
 import UIKit
 import FLEX
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -60,5 +61,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     fileprivate func initSDKs() {
         FLEXManager.shared.showExplorer()
+        IQKeyboardManager.shared.enable = true
     }
 }

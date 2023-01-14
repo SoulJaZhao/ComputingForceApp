@@ -7,10 +7,14 @@ PODS:
   - FGRoute (1.0.7)
   - FLEX (5.22.10)
   - Hue (5.0.0)
+  - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - SDWebImage (5.14.3):
+    - SDWebImage/Core (= 5.14.3)
+  - SDWebImage/Core (5.14.3)
   - SwiftAlgorithms (1.0.0)
   - Swinject (2.8.2)
   - URLNavigator (2.4.1)
@@ -21,8 +25,10 @@ DEPENDENCIES:
   - FGRoute
   - FLEX
   - Hue (= 5.0.0)
+  - IQKeyboardManagerSwift
   - KeychainAccess (= 4.2.2)
   - NVActivityIndicatorView (= 5.1.1)
+  - SDWebImage
   - Swinject (= 2.8.2)
   - URLNavigator (= 2.4.1)
 
@@ -33,8 +39,10 @@ SPEC REPOS:
     - FGRoute
     - FLEX
     - Hue
+    - IQKeyboardManagerSwift
     - KeychainAccess
     - NVActivityIndicatorView
+    - SDWebImage
     - SwiftAlgorithms
     - Swinject
     - URLNavigator
@@ -45,12 +53,14 @@ SPEC CHECKSUMS:
   FGRoute: e46b1ef1a98f74659fb4e25c8473550175799da4
   FLEX: f21ee4f498eed3f8a1eded66b21939fd3b7a22ce
   Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SDWebImage: 9c36e66c8ce4620b41a7407698dda44211a96764
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: 51238971eb8427472ce84b23975fb1f971de0216
+PODFILE CHECKSUM: 6b5cf536d1d8653b65c530e63dee14e6aaa6086f
 
 COCOAPODS: 1.11.3

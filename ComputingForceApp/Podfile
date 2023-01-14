@@ -12,5 +12,7 @@ target 'ComputingForceApp' do
     pod 'Hue', '5.0.0'
     pod 'Charts', '4.1.0'
     pod "FGRoute"
+    pod 'IQKeyboardManagerSwift', '6.5.11'
+    pod 'SDWebImage', '5.14.3'
     pod 'FLEX', :configurations => ['Debug']
 end

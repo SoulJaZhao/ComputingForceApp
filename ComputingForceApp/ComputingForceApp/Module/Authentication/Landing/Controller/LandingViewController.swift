@@ -7,10 +7,12 @@
 
 import UIKit
 import Combine
+import SDWebImage
 
 class LandingViewController: BaseViewController<LandingViewModel> {
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -61,6 +63,12 @@ class LandingViewController: BaseViewController<LandingViewModel> {
         signUpBtn.layer.cornerRadius = 8
         signUpBtn.layer.masksToBounds = true
         signUpBtn.clipsToBounds = true
+        
+        let gifImageView = SDAnimatedImageView(frame: self.view.bounds)
+        let gifImage = SDAnimatedImage(named: "Landing0.gif")
+        gifImageView.image = gifImage
+        self.view.insertSubview(gifImageView, at: 0)
+        
         
         signInBtn
             .publisher(for: .touchUpInside)

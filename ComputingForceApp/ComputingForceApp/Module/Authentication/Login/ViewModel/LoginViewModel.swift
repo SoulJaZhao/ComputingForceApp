@@ -9,6 +9,10 @@ import Foundation
 
 class LoginViewModel: BaseViewModel {
     
+    @Published var isRemeberMe = false
+    @Published var username: String = ""
+    @Published var password: String = ""
+    
     override func getXibName() -> String {
         return "LoginViewController"
     }

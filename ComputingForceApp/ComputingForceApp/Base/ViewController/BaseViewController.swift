@@ -17,6 +17,7 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: viewModel.getXibName(), bundle: nil)
         self.modalPresentationStyle = .fullScreen
+        setupCommonUI()
     }
     
     required init?(coder: NSCoder) {
@@ -31,5 +32,10 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     /// Entry point for data binding in both `view to viewModel` and `viewModel to view` directions.
     open func bind(viewModel: ViewModelType, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
         
+    }
+    
+    private func setupCommonUI() {
+        let theme = AppContext.context.theme
+        self.view.backgroundColor = theme.backggroundColor
     }
 }
