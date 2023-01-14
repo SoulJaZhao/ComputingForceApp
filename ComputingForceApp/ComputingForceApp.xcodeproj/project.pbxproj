@@ -41,6 +41,10 @@
 		21F828A52971B7160094B995 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828A42971B7160094B995 /* UIButtonExtension.swift */; };
 		21F828A72972BAFD0094B995 /* Landing0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21F828A62972BAFD0094B995 /* Landing0.gif */; };
 		21F828AC2972BED70094B995 /* UITextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828AB2972BED70094B995 /* UITextfieldExtension.swift */; };
+		21F828B22972DD960094B995 /* CommonTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828B02972DD960094B995 /* CommonTextFieldCell.swift */; };
+		21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F828B12972DD960094B995 /* CommonTextFieldCell.xib */; };
+		21F828B72972E50D0094B995 /* SignUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828B62972E50D0094B995 /* SignUpDataSource.swift */; };
+		21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828B92972E90B0094B995 /* CollectionExtension.swift */; };
 		F1C7ABF8296E84AB001FB5A1 /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7ABF7296E84AB001FB5A1 /* UIControlExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,10 @@
 		21F828A42971B7160094B995 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		21F828A62972BAFD0094B995 /* Landing0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Landing0.gif; sourceTree = "<group>"; };
 		21F828AB2972BED70094B995 /* UITextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtension.swift; sourceTree = "<group>"; };
+		21F828B02972DD960094B995 /* CommonTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextFieldCell.swift; sourceTree = "<group>"; };
+		21F828B12972DD960094B995 /* CommonTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTextFieldCell.xib; sourceTree = "<group>"; };
+		21F828B62972E50D0094B995 /* SignUpDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataSource.swift; sourceTree = "<group>"; };
+		21F828B92972E90B0094B995 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		2AE057A0E7E0C9A008695237 /* Pods-ComputingForceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.release.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.release.xcconfig"; sourceTree = "<group>"; };
 		482C5787E033E7B2B4B042D3 /* Pods_ComputingForceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputingForceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03147916932DCE5D7AD0A0D /* Pods-ComputingForceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.debug.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 		2110B30429704BD6000B1B1C /* SIgnUp */ = {
 			isa = PBXGroup;
 			children = (
+				21F828B52972E4F10094B995 /* DataSource */,
 				2110B30629704BED000B1B1C /* Controller */,
 				2110B30529704BE6000B1B1C /* ViewModel */,
 			);
@@ -336,6 +345,7 @@
 		21E667FD2965D9750061AE89 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				21F828AE2972DD640094B995 /* View */,
 				2110B32829719C4F000B1B1C /* Theme */,
 				2110B2DF296DABA6000B1B1C /* VIewModel */,
 				2110B2D3296DA7CD000B1B1C /* Router */,
@@ -420,6 +430,39 @@
 			path = UITextfield;
 			sourceTree = "<group>";
 		};
+		21F828AE2972DD640094B995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21F828AF2972DD6F0094B995 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21F828AF2972DD6F0094B995 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				21F828B02972DD960094B995 /* CommonTextFieldCell.swift */,
+				21F828B12972DD960094B995 /* CommonTextFieldCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		21F828B52972E4F10094B995 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				21F828B62972E50D0094B995 /* SignUpDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		21F828B82972E8FB0094B995 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				21F828B92972E90B0094B995 /* CollectionExtension.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		67CEFC89AEA31B6B99E431A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +484,7 @@
 		F1C7ABF5296E842D001FB5A1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				21F828B82972E8FB0094B995 /* Collection */,
 				21F828A02971B1D60094B995 /* UIView */,
 				21F8289D2971ACA50094B995 /* UIColor */,
 				21F8289A2971ABC40094B995 /* UIImage */,
@@ -526,6 +570,7 @@
 				211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */,
 				2110B3272971968E000B1B1C /* LaunchViewController.xib in Resources */,
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
+				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
 				2118221F2965D37400BF8490 /* Assets.xcassets in Resources */,
 			);
@@ -583,6 +628,7 @@
 				211822162965D37300BF8490 /* AppDelegate.swift in Sources */,
 				2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */,
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
+				21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */,
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
@@ -592,6 +638,7 @@
 				2110B32A29719C5B000B1B1C /* Theme.swift in Sources */,
 				2110B2CD296DA186000B1B1C /* BaseTabBarController.swift in Sources */,
 				2110B31E29718EBC000B1B1C /* LaunchViewModel.swift in Sources */,
+				21F828B22972DD960094B995 /* CommonTextFieldCell.swift in Sources */,
 				2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
 				F1C7ABF8296E84AB001FB5A1 /* UIControlExtension.swift in Sources */,
@@ -605,6 +652,7 @@
 				21F828A52971B7160094B995 /* UIButtonExtension.swift in Sources */,
 				2110B30E297070AD000B1B1C /* IPAddressTool.swift in Sources */,
 				2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */,
+				21F828B72972E50D0094B995 /* SignUpDataSource.swift in Sources */,
 				2110B2D1296DA1C6000B1B1C /* BaseTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

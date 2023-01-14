@@ -8,7 +8,10 @@
 "SignIn" = "SignIn";
 "SIgnUp" = "SignUp";
 "Skip" = "Skip";
-"Username" = "   Username";
-"Password" = "   Password";
+"Username" = "Username";
+"Password" = "Password";
+"ConfirmPassword" = "ConfirmPassword";
 "RememberMe" = "Remember me";
 "ForgotPassword" = "Forgot Password";
+"Company" = "Company";
+"Phone" = "Phone";

@@ -15,7 +15,8 @@ class LoginViewController: BaseViewController<LoginViewModel> {
     @IBOutlet weak var rememberMeBtn: UIButton!
     @IBOutlet weak var rememberMeLabel: UILabel!
     @IBOutlet weak var forgotPasswordBtn: UIButton!
-    
+    @IBOutlet weak var usernameContainerView: UIView!
+    @IBOutlet weak var passwordContainerView: UIView!
     private var cancellables = Set<AnyCancellable>()
     
     private var isValidUsernmae: AnyPublisher<Bool, Never> {
@@ -62,6 +63,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             .store(in: &cancellables)
         
         isLoginEnable
+            .receive(on: RunLoop.main)
             .sink { [weak self] enable in
                 guard let self = self else { return }
                 self.loginBtn.isEnabled = enable
@@ -76,25 +78,32 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         
         loginBtn.setTitle(Localization.text(key: "SignIn"), for: .normal)
         loginBtn.titleLabel?.font = theme.largeBoldFont
-        loginBtn.applyGradient(colors: [theme.blueButtonGradientStartColor, theme.blueButtonGradientEndColor])
         loginBtn.setTitleColor(theme.whiteColor, for: .normal)
+        let enableImage = UIImage.imageWithGradient(from: theme.blueButtonGradientStartColor, to: theme.blueButtonGradientEndColor, with: loginBtn.bounds)
+        loginBtn.setBackgroundImage(enableImage, for: .normal)
+        loginBtn.setBackgroundColor(color: .lightGray, forState: .disabled)
         loginBtn.layer.cornerRadius = theme.cornerRadius
         loginBtn.layer.masksToBounds = true
         loginBtn.clipsToBounds = true
         
+        
+        usernameContainerView.backgroundColor = theme.backggroundColor
+        usernameContainerView.layer.borderColor = theme.textfieldBorderColor.cgColor
+        usernameContainerView.layer.borderWidth = 1.5
+        usernameContainerView.layer.cornerRadius = theme.cornerRadius
+        usernameContainerView.layer.masksToBounds = true
+        usernameContainerView.clipsToBounds = true
+        
         usernameTextField.placeholder = Localization.text(key: "Username")
-        usernameTextField.layer.borderColor = theme.textfieldBorderColor.cgColor
-        usernameTextField.layer.borderWidth = 1.5
-        usernameTextField.layer.cornerRadius = theme.cornerRadius
-        usernameTextField.layer.masksToBounds = true
-        usernameTextField.clipsToBounds = true
+        
+        passwordContainerView.backgroundColor = theme.backggroundColor
+        passwordContainerView.layer.borderColor = theme.textfieldBorderColor.cgColor
+        passwordContainerView.layer.borderWidth = 1.5
+        passwordContainerView.layer.cornerRadius = theme.cornerRadius
+        passwordContainerView.layer.masksToBounds = true
+        passwordContainerView.clipsToBounds = true
         
         passwordTextField.placeholder = Localization.text(key: "Password")
-        passwordTextField.layer.borderColor = theme.textfieldBorderColor.cgColor
-        passwordTextField.layer.borderWidth = 1.5
-        passwordTextField.layer.cornerRadius = theme.cornerRadius
-        passwordTextField.layer.masksToBounds = true
-        passwordTextField.clipsToBounds = true
         
         rememberMeLabel.text = Localization.text(key: "RememberMe")
         rememberMeLabel.font = theme.mediumFont
@@ -128,6 +137,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             .store(in: &cancellables)
         
         loginBtn.publisher(for: .touchUpInside)
+            .receive(on: RunLoop.main)
             .sink { _ in
                 print("login")
             }
