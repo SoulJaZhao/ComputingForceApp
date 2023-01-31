@@ -4,11 +4,17 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - CombineCocoa (0.4.1)
   - FGRoute (1.0.7)
   - FLEX (5.22.10)
   - Hue (5.0.0)
   - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
+  - LKAlertController (1.12.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -20,15 +26,17 @@ PODS:
   - URLNavigator (2.4.1)
 
 DEPENDENCIES:
-  - Alamofire (= 5.6.4)
   - Charts (= 4.1.0)
+  - CombineCocoa
   - FGRoute
   - FLEX
   - Hue (= 5.0.0)
-  - IQKeyboardManagerSwift
+  - IQKeyboardManagerSwift (= 6.5.11)
   - KeychainAccess (= 4.2.2)
+  - LKAlertController
+  - Moya (~> 15.0)
   - NVActivityIndicatorView (= 5.1.1)
-  - SDWebImage
+  - SDWebImage (= 5.14.3)
   - Swinject (= 2.8.2)
   - URLNavigator (= 2.4.1)
 
@@ -36,11 +44,14 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Charts
+    - CombineCocoa
     - FGRoute
     - FLEX
     - Hue
     - IQKeyboardManagerSwift
     - KeychainAccess
+    - LKAlertController
+    - Moya
     - NVActivityIndicatorView
     - SDWebImage
     - SwiftAlgorithms
@@ -50,17 +61,20 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Charts: 354f86803d11d9c35de280587fef50d1af063978
+  CombineCocoa: e5210dbfb480ff251078929459ac17e750e7af1d
   FGRoute: e46b1ef1a98f74659fb4e25c8473550175799da4
   FLEX: f21ee4f498eed3f8a1eded66b21939fd3b7a22ce
   Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  LKAlertController: 10c7e8627e5d4757d03b4f53469f35ded14c378f
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: 9c36e66c8ce4620b41a7407698dda44211a96764
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: 6b5cf536d1d8653b65c530e63dee14e6aaa6086f
+PODFILE CHECKSUM: e51c9e01cf546b5505fb7aa316b15dc30a4fc494
 
 COCOAPODS: 1.11.3

@@ -15,3 +15,6 @@
 "ForgotPassword" = "Forgot Password";
 "Company" = "Company";
 "Phone" = "Phone";
+"Error" = "Error";
+"TryAgainLater" = "Please try again later";
+"Confirm" = "Confirm";

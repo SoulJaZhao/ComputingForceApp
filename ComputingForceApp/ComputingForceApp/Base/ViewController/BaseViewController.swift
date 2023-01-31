@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import LKAlertController
 
 class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     
@@ -37,5 +38,21 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
     private func setupCommonUI() {
         let theme = AppContext.context.theme
         self.view.backgroundColor = theme.backggroundColor
+    }
+    
+    func startLoading() {
+        view.endEditing(true)
+        ActivityIndicatorManager.manager.startAnimation()
+    }
+    
+    func stopLoading() {
+        view.endEditing(true)
+        ActivityIndicatorManager.manager.stopAnimation()
+    }
+    
+    func showGenericErrorAlert() {
+        Alert(title: Localization.text(key: "Error"), message: Localization.text(key: "TryAgainLater"))
+            .addAction(Localization.text(key: "Confirm") ?? "", style: .cancel)
+            .show()
     }
 }

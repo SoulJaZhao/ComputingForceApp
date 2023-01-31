@@ -71,7 +71,7 @@ class LandingViewController: BaseViewController<LandingViewModel> {
         
         
         signInBtn
-            .publisher(for: .touchUpInside)
+            .controlEventPublisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.viewModel.viewOutputSubject.send(.transition(.signIn))
@@ -79,7 +79,7 @@ class LandingViewController: BaseViewController<LandingViewModel> {
             .store(in: &subscriptions)
         
         signUpBtn
-            .publisher(for: .touchUpInside)
+            .controlEventPublisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.viewModel.viewOutputSubject.send(.transition(.signUp))

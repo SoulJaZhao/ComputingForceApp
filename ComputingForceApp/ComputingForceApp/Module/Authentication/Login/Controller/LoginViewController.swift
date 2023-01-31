@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 
 class LoginViewController: BaseViewController<LoginViewModel> {
     @IBOutlet weak var usernameTextField: UITextField!
@@ -62,6 +63,26 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             }
             .store(in: &cancellables)
         
+        viewModel.loadingEventSubject
+            .sink { event in
+                switch event {
+                case .on:
+                    self.startLoading()
+                case .off:
+                    self.stopLoading()
+                }
+            }
+            .store(in: &cancellables)
+        
+        viewModel.alertEventSubject
+            .sink { event in
+                switch event {
+                case .genericAlert:
+                    self.showGenericErrorAlert()
+                }
+            }
+            .store(in: &cancellables)
+        
         isLoginEnable
             .receive(on: RunLoop.main)
             .sink { [weak self] enable in
@@ -95,6 +116,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         usernameContainerView.clipsToBounds = true
         
         usernameTextField.placeholder = Localization.text(key: "Username")
+        usernameTextField.text = viewModel.getStoredData().username
         
         passwordContainerView.backgroundColor = theme.backggroundColor
         passwordContainerView.layer.borderColor = theme.textfieldBorderColor.cgColor
@@ -104,6 +126,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         passwordContainerView.clipsToBounds = true
         
         passwordTextField.placeholder = Localization.text(key: "Password")
+        passwordTextField.text = viewModel.getStoredData().password
         
         rememberMeLabel.text = Localization.text(key: "RememberMe")
         rememberMeLabel.font = theme.mediumFont
@@ -113,7 +136,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         forgotPasswordBtn.titleLabel?.font = theme.mediumFont
         forgotPasswordBtn.setTitle(Localization.text(key: "ForgotPassword"), for: .normal)
         
-        rememberMeBtn.publisher(for: .touchUpInside)
+        rememberMeBtn.controlEventPublisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.viewModel.isRemeberMe = !self.viewModel.isRemeberMe
@@ -124,7 +147,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .receive(on: RunLoop.main)
             .sink { [weak self] text in
-                self?.viewModel.username = text
+                self?.viewModel.username = text ?? ""
             }
             .store(in: &cancellables)
         
@@ -132,14 +155,14 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .receive(on: RunLoop.main)
             .sink { [weak self] text in
-                self?.viewModel.password = text
+                self?.viewModel.password = text ?? ""
             }
             .store(in: &cancellables)
         
-        loginBtn.publisher(for: .touchUpInside)
+        loginBtn.controlEventPublisher(for: .touchUpInside)
             .receive(on: RunLoop.main)
-            .sink { _ in
-                print("login")
+            .sink { [weak self] _ in
+                self?.viewModel.login()
             }
             .store(in: &cancellables)
     }

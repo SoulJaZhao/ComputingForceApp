@@ -9,7 +9,19 @@ import Foundation
 import Combine
 
 class BaseViewModel {
+    enum LoadingEvent {
+        case on
+        case off
+    }
+    
+    enum AlertEvent {
+        case genericAlert
+    }
+    
     func getXibName() -> String {
         fatalError("must override this func")
     }
+    
+    let loadingEventSubject = PassthroughSubject<LoadingEvent, Never>()
+    let alertEventSubject = PassthroughSubject<AlertEvent, Never>()
 }

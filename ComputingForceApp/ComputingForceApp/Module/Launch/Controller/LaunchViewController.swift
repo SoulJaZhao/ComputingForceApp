@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 
 class LaunchViewController: BaseViewController<LaunchViewModel> {
     @IBOutlet weak var skipBtn: UIButton!
@@ -64,7 +65,7 @@ class LaunchViewController: BaseViewController<LaunchViewModel> {
     private func setupUI() {
         skipBtn.titleLabel?.font = AppContext.context.theme.smallFont
         updateBtnTime()
-        skipBtn.publisher(for: .touchUpInside)
+        skipBtn.controlEventPublisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.redirectToMainView()

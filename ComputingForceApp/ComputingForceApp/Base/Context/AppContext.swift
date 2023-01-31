@@ -17,24 +17,27 @@ final class AppContext {
     
     static let context = AppContext()
     
-    let dependencyInjectionContainer: Container
+    
     let router: Router
     let theme: Theme
+    let environment: Environment
+    let dependencyInjection: DependencyInjectionService
     
     let appEventSubject: PassthroughSubject<AppEventType, Never> = PassthroughSubject()
     private var cancellables = Set<AnyCancellable>()
     
     private init() {
-        dependencyInjectionContainer = Container()
         router = Router()
         theme = Theme()
+        environment = Environment(type: .test)
+        dependencyInjection = DependencyInjectionService()
+        dependencyInjection.registerServices()
         
         appEventSubject
             .sink { [weak self] event in
                 guard let self = self else { return }
                 switch event {
                 case .logout:
-                    self.dependencyInjectionContainer.removeAll()
                     self.router.transitionEvent.send(.landing)
                 }
             }
