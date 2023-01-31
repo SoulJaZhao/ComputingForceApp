@@ -51,27 +51,7 @@ class AuthenticationService: ServiceProtocol {
     private var cancellables = Set<AnyCancellable>()
     
     func login(username: String, password: String) -> AnyPublisher<User, APIError> {
-        Future<User, APIError> { promise in
-            self.provider.request(.login(username: username, password: password)) { result in
-                switch result {
-                case let .success(moyaResponse):
-                    do {
-                        let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
-                        let response = try filteredResponse.map(User.self, atKeyPath: "data")
-                        promise(.success(response))
-                    } catch {
-                        do {
-                            let error = try moyaResponse.map(ErrorModel.self)
-                            promise(.failure(.httpError(error)))
-                        } catch {
-                            promise(.failure(.unknown))
-                        }
-                    }
-                case let .failure(error):
-                    promise(.failure(.internalError(error)))
-                }
-            }
-        }
-        .eraseToAnyPublisher()
+        return self.excute(target: .login(username: username, password: password),
+                           responseModel: User.self)
     }
 }

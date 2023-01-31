@@ -37,7 +37,7 @@ class LoginViewModel: BaseViewModel {
                         self.keychainService?.removeAll()
                     }
                     self.loadingEventSubject.send(.off)
-                case .failure(let error):
+                case .failure(_):
                     self.loadingEventSubject.send(.off)
                     self.alertEventSubject.send(.genericAlert)
                 }
