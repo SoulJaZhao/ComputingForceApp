@@ -15,12 +15,12 @@ enum APIError : Error {
     case internalError(MoyaError)
 }
 
-protocol ServiceProtocol {
+protocol NetworkServiceProtocol {
     associatedtype AbstractType: TargetType
     var provider: MoyaProvider<AbstractType> { get }
 }
 
-extension ServiceProtocol {
+extension NetworkServiceProtocol {
     var provider: MoyaProvider<AbstractType> {
         MoyaProvider<AbstractType>()
     }

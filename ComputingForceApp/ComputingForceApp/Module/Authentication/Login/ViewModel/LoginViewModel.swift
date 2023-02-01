@@ -42,7 +42,7 @@ class LoginViewModel: BaseViewModel {
                     self.alertEventSubject.send(.genericAlert)
                 }
             } receiveValue: { user in
-                print(user)
+                AppContext.context.dependencyInjection.container.resolve(CrendentialServiceProtocol.self)?.set(user: user)
             }
             .store(in: &cancellables)
 

@@ -45,7 +45,7 @@ extension Authentication : TargetType {
     }
 }
 
-class AuthenticationService: ServiceProtocol {
+class AuthenticationService: NetworkServiceProtocol {
     typealias AbstractType = Authentication
     
     private var cancellables = Set<AnyCancellable>()

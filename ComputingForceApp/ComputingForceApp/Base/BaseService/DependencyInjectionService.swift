@@ -9,11 +9,15 @@ import Foundation
 import Swinject
 
 struct DependencyInjectionService {
-    let container = Container()
+    let container = Container(defaultObjectScope: .container)
     
     func registerServices() {
         container.register(KeychainServiceProtocol.self) { _ in
             KeychainService()
+        }.inObjectScope(.container)
+        
+        container.register(CrendentialServiceProtocol.self) { _ in
+            CrendentialService()
         }
     }
     

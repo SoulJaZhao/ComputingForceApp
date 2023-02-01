@@ -43,6 +43,7 @@
 		214945FD29893EB2005FEB6F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F929893EB2005FEB6F /* UIButtonExtension.swift */; };
 		21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494600298943A3005FEB6F /* DependencyInjectionService.swift */; };
 		2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */; };
+		21494607298A88CB005FEB6F /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494606298A88CB005FEB6F /* CredentialService.swift */; };
 		21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E668082965E4900061AE89 /* BaseNavigationController.swift */; };
 		21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289B2971ABD40094B995 /* UIImageExtension.swift */; };
 		21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289E2971ACB00094B995 /* UIColorExtension.swift */; };
@@ -95,6 +96,7 @@
 		214945F929893EB2005FEB6F /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		21494600298943A3005FEB6F /* DependencyInjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionService.swift; sourceTree = "<group>"; };
 		2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		21494606298A88CB005FEB6F /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		21E668082965E4900061AE89 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		21F8289B2971ABD40094B995 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		21F8289E2971ACB00094B995 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		214945E42988B5E6005FEB6F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				21494605298A88A8005FEB6F /* CredentialService */,
 				214945E52988B76D005FEB6F /* AuthenticationService */,
 			);
 			path = Services;
@@ -429,6 +432,14 @@
 				2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		21494605298A88A8005FEB6F /* CredentialService */ = {
+			isa = PBXGroup;
+			children = (
+				21494606298A88CB005FEB6F /* CredentialService.swift */,
+			);
+			path = CredentialService;
 			sourceTree = "<group>";
 		};
 		21E667FD2965D9750061AE89 /* Base */ = {
@@ -693,6 +704,7 @@
 			files = (
 				21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */,
 				211822162965D37300BF8490 /* AppDelegate.swift in Sources */,
+				21494607298A88CB005FEB6F /* CredentialService.swift in Sources */,
 				214945EE2988D66B005FEB6F /* Environment.swift in Sources */,
 				2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */,
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
