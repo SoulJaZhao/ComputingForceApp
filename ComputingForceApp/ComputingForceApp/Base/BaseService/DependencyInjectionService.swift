@@ -20,4 +20,9 @@ struct DependencyInjectionService {
     func removeAll() {
         container.removeAll()
     }
+    
+    func refreshServices() {
+        self.removeAll()
+        self.registerServices()
+    }
 }

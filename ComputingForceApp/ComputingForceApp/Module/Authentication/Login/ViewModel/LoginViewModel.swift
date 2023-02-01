@@ -42,7 +42,7 @@ class LoginViewModel: BaseViewModel {
                     self.alertEventSubject.send(.genericAlert)
                 }
             } receiveValue: { user in
-                // TODO: store user
+                print(user)
             }
             .store(in: &cancellables)
 

@@ -38,6 +38,7 @@ final class AppContext {
                 guard let self = self else { return }
                 switch event {
                 case .logout:
+                    self.dependencyInjection.refreshServices()
                     self.router.transitionEvent.send(.landing)
                 }
             }
