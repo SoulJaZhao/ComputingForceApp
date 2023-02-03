@@ -92,6 +92,7 @@ class LoginViewController: BaseViewController<LoginViewModel> {
             .store(in: &cancellables)
         
         AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.$user
+            .receive(on: RunLoop.main)
             .sink(receiveValue: { user in
                 if user != nil {
                     self.navigationController?.dismiss(animated: true)

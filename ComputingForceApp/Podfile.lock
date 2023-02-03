@@ -33,7 +33,7 @@ DEPENDENCIES:
   - Hue (= 5.0.0)
   - IQKeyboardManagerSwift (= 6.5.11)
   - KeychainAccess (= 4.2.2)
-  - LKAlertController
+  - LKAlertController (= 1.12.2)
   - Moya (~> 15.0)
   - NVActivityIndicatorView (= 5.1.1)
   - SDWebImage (= 5.14.3)
@@ -75,6 +75,6 @@ SPEC CHECKSUMS:
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: e51c9e01cf546b5505fb7aa316b15dc30a4fc494
+PODFILE CHECKSUM: cdd6d2c4334d4925879ba2ef09acd90bc09d66b3
 
 COCOAPODS: 1.11.3
