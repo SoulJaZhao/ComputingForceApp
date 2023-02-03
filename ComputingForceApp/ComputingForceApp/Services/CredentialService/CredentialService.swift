@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import Combine
 
-protocol CrendentialServiceProtocol {
-    var user: User? { get }
-    var accessToken: String? { get }
-    func set(user: User?)
-    func refreshAccessToken(token: String?)
-    func clear()
-}
-
-final class CrendentialService: CrendentialServiceProtocol {
+final class CredentialService {
     
-    private(set) var user: User?
-    private(set) var accessToken: String?
+    @Published private(set) var user: User?
+    @Published private(set) var accessToken: String?
+    
+    var isLoggedIn: Bool {
+        return user != nil && accessToken != nil
+    }
     
     func set(user: User?) {
         if let unwrappedUser = user {
             self.user = unwrappedUser
-            self.accessToken = unwrappedUser.token
+            self.refreshAccessToken(token: unwrappedUser.token)
         } else {
             self.user = nil
             self.refreshAccessToken(token: nil)

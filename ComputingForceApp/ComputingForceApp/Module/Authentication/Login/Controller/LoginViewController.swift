@@ -90,6 +90,14 @@ class LoginViewController: BaseViewController<LoginViewModel> {
                 self.loginBtn.isEnabled = enable
             }
             .store(in: &cancellables)
+        
+        AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.$user
+            .sink(receiveValue: { user in
+                if user != nil {
+                    self.navigationController?.dismiss(animated: true)
+                }
+            })
+            .store(in: &cancellables)
     }
     
     private func setupUI() {

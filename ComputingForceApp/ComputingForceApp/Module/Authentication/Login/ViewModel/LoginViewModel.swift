@@ -15,7 +15,9 @@ class LoginViewModel: BaseViewModel {
     @Published var password: String = ""
     
     let authenticationService = AuthenticationService()
-    let keychainService: KeychainServiceProtocol? = AppContext.context.dependencyInjection.container.resolve(KeychainServiceProtocol.self)
+    var keychainService: KeychainServiceProtocol? {
+        AppContext.context.dependencyInjection.container.resolve(KeychainServiceProtocol.self)
+    }
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -42,7 +44,7 @@ class LoginViewModel: BaseViewModel {
                     self.alertEventSubject.send(.genericAlert)
                 }
             } receiveValue: { user in
-                AppContext.context.dependencyInjection.container.resolve(CrendentialServiceProtocol.self)?.set(user: user)
+                AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.set(user: user)
             }
             .store(in: &cancellables)
 

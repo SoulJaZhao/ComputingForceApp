@@ -21,7 +21,7 @@ final class Router {
     var mainTabbarController: BaseTabBarController?
     private let navigator: Navigator
     private var cancellables = Set<AnyCancellable>()
-    private var keyWindow: UIWindow {
+    var keyWindow: UIWindow {
         UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow(frame: .zero)
     }
     

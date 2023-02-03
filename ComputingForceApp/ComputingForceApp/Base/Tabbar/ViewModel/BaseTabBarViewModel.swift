@@ -18,12 +18,17 @@ final class BaseTabBarViewModel {
         case transition(Transition)
     }
     
-    
     public lazy var viewOutputEventPublisher: AnyPublisher = self.viewOutputEvent.eraseToAnyPublisher()
     private var viewOutputEvent: PassthroughSubject<ViewOutputEvent, Never> = PassthroughSubject()
+    var credentailService: CredentialService? {
+        AppContext.context.dependencyInjection.container.resolve(CredentialService.self)
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
     
     func validateLoginStatus() {
-        // TODO: Checking loading status
-        viewOutputEvent.send(.transition(.landing))
+        if credentailService?.isLoggedIn == false {
+            viewOutputEvent.send(.transition(.landing))
+        }
     }
 }

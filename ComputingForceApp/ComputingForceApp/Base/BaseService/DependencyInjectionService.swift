@@ -16,8 +16,8 @@ struct DependencyInjectionService {
             KeychainService()
         }.inObjectScope(.container)
         
-        container.register(CrendentialServiceProtocol.self) { _ in
-            CrendentialService()
+        container.register(CredentialService.self) { _ in
+            CredentialService()
         }
     }
     
