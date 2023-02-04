@@ -22,7 +22,7 @@ extension Authentication : TargetType {
     var path: String {
         switch self {
         case .login:
-            return "/api/v1/login"
+            return "/api/\(AppContext.context.environment.version.rawValue)/login"
         }
     }
     
