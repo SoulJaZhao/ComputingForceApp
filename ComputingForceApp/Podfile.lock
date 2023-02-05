@@ -11,6 +11,7 @@ PODS:
   - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
   - LKAlertController (1.12.2)
+  - MJRefresh (3.7.5)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.5.11)
   - KeychainAccess (= 4.2.2)
   - LKAlertController (= 1.12.2)
+  - MJRefresh
   - Moya (~> 15.0)
   - NVActivityIndicatorView (= 5.1.1)
   - SDWebImage (= 5.14.3)
@@ -51,6 +53,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - KeychainAccess
     - LKAlertController
+    - MJRefresh
     - Moya
     - NVActivityIndicatorView
     - SDWebImage
@@ -68,6 +71,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   LKAlertController: 10c7e8627e5d4757d03b4f53469f35ded14c378f
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: 9c36e66c8ce4620b41a7407698dda44211a96764
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: cdd6d2c4334d4925879ba2ef09acd90bc09d66b3
+PODFILE CHECKSUM: f22d9ea011f0b7a4c60c613d10f282b6795ef8dd
 
 COCOAPODS: 1.11.3

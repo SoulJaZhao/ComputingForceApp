@@ -5,7 +5,7 @@
 //  Created by 赵龙 on 2023/1/10.
 //
 
-import Foundation
+import UIKit
 import Combine
 
 final class BaseTabBarViewModel {
@@ -30,5 +30,15 @@ final class BaseTabBarViewModel {
         if credentailService?.isLoggedIn == false {
             viewOutputEvent.send(.transition(.landing))
         }
+    }
+    
+    func subViewControllers() -> [UIViewController] {
+        guard let computingNodesVC = AppContext.context.router.getViewController(route: .ComputingNodes) else {
+            return []
+        }
+        let computingNodesNav = BaseNavigationController(rootViewController: computingNodesVC)
+        AppContext.context.router.computingNodesNavigationController = computingNodesNav
+        
+        return [computingNodesNav]
     }
 }

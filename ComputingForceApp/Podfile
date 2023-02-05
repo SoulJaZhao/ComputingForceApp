@@ -16,5 +16,6 @@ target 'ComputingForceApp' do
     pod 'SDWebImage', '5.14.3'
     pod 'CombineCocoa'
     pod 'LKAlertController', '1.12.2'
+    pod 'MJRefresh', '3.7.5'
     pod 'FLEX', :configurations => ['Debug']
 end

@@ -44,6 +44,13 @@
 		21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494600298943A3005FEB6F /* DependencyInjectionService.swift */; };
 		2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */; };
 		21494607298A88CB005FEB6F /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494606298A88CB005FEB6F /* CredentialService.swift */; };
+		21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF904298F6191008351F6 /* NodesListViewController.swift */; };
+		21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF905298F6191008351F6 /* NodesListViewController.xib */; };
+		21CEF909298F61A8008351F6 /* NodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF908298F61A8008351F6 /* NodesListViewModel.swift */; };
+		21CEF90C298F6A44008351F6 /* NodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90B298F6A44008351F6 /* NodesService.swift */; };
+		21CEF90F298F6F16008351F6 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90E298F6F16008351F6 /* Nodes.swift */; };
+		21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF911298FBA2D008351F6 /* NodesListCell.swift */; };
+		21CEF914298FBA2D008351F6 /* NodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF912298FBA2D008351F6 /* NodesListCell.xib */; };
 		21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E668082965E4900061AE89 /* BaseNavigationController.swift */; };
 		21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289B2971ABD40094B995 /* UIImageExtension.swift */; };
 		21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289E2971ACB00094B995 /* UIColorExtension.swift */; };
@@ -97,6 +104,13 @@
 		21494600298943A3005FEB6F /* DependencyInjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionService.swift; sourceTree = "<group>"; };
 		2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		21494606298A88CB005FEB6F /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
+		21CEF904298F6191008351F6 /* NodesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewController.swift; sourceTree = "<group>"; };
+		21CEF905298F6191008351F6 /* NodesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListViewController.xib; sourceTree = "<group>"; };
+		21CEF908298F61A8008351F6 /* NodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewModel.swift; sourceTree = "<group>"; };
+		21CEF90B298F6A44008351F6 /* NodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesService.swift; sourceTree = "<group>"; };
+		21CEF90E298F6F16008351F6 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
+		21CEF911298FBA2D008351F6 /* NodesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListCell.swift; sourceTree = "<group>"; };
+		21CEF912298FBA2D008351F6 /* NodesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListCell.xib; sourceTree = "<group>"; };
 		21E668082965E4900061AE89 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		21F8289B2971ABD40094B995 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		21F8289E2971ACB00094B995 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +149,7 @@
 		2110B2C5296D9B2D000B1B1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				21CEF901298F6139008351F6 /* Nodes */,
 				2110B31029718C1D000B1B1C /* Launch */,
 				F1B42CFE29700FCD00B08A25 /* Authentication */,
 			);
@@ -372,6 +387,7 @@
 		214945E42988B5E6005FEB6F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				21CEF90A298F6A33008351F6 /* NodesService */,
 				21494605298A88A8005FEB6F /* CredentialService */,
 				214945E52988B76D005FEB6F /* AuthenticationService */,
 			);
@@ -440,6 +456,59 @@
 				21494606298A88CB005FEB6F /* CredentialService.swift */,
 			);
 			path = CredentialService;
+			sourceTree = "<group>";
+		};
+		21CEF901298F6139008351F6 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF910298FBA14008351F6 /* View */,
+				21CEF90D298F6EDF008351F6 /* Model */,
+				21CEF903298F6153008351F6 /* ViewModel */,
+				21CEF902298F614D008351F6 /* Controller */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		21CEF902298F614D008351F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF904298F6191008351F6 /* NodesListViewController.swift */,
+				21CEF905298F6191008351F6 /* NodesListViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		21CEF903298F6153008351F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF908298F61A8008351F6 /* NodesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21CEF90A298F6A33008351F6 /* NodesService */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF90B298F6A44008351F6 /* NodesService.swift */,
+			);
+			path = NodesService;
+			sourceTree = "<group>";
+		};
+		21CEF90D298F6EDF008351F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF90E298F6F16008351F6 /* Nodes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21CEF910298FBA14008351F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21CEF911298FBA2D008351F6 /* NodesListCell.swift */,
+				21CEF912298FBA2D008351F6 /* NodesListCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		21E667FD2965D9750061AE89 /* Base */ = {
@@ -641,6 +710,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21CEF914298FBA2D008351F6 /* NodesListCell.xib in Resources */,
 				2110B2FF29704939000B1B1C /* Localizable.strings in Resources */,
 				2110B2E9297011BB000B1B1C /* LoginViewController.xib in Resources */,
 				2110B2DC296DAA1F000B1B1C /* LandingViewController.xib in Resources */,
@@ -649,6 +719,7 @@
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
 				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
+				21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */,
 				2118221F2965D37400BF8490 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,21 +777,25 @@
 				211822162965D37300BF8490 /* AppDelegate.swift in Sources */,
 				21494607298A88CB005FEB6F /* CredentialService.swift in Sources */,
 				214945EE2988D66B005FEB6F /* Environment.swift in Sources */,
+				21CEF909298F61A8008351F6 /* NodesListViewModel.swift in Sources */,
 				2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */,
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
 				21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */,
+				21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */,
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
 				2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */,
 				214945F42988F826005FEB6F /* UserModel.swift in Sources */,
 				21F828A22971B1E50094B995 /* UIViewExtension.swift in Sources */,
+				21CEF90F298F6F16008351F6 /* Nodes.swift in Sources */,
 				214945E72988B7FA005FEB6F /* AuthenticationService.swift in Sources */,
 				2110B2D5296DA7D9000B1B1C /* Router.swift in Sources */,
 				2110B32A29719C5B000B1B1C /* Theme.swift in Sources */,
 				2110B2CD296DA186000B1B1C /* BaseTabBarController.swift in Sources */,
 				2110B31E29718EBC000B1B1C /* LaunchViewModel.swift in Sources */,
 				21F828B22972DD960094B995 /* CommonTextFieldCell.swift in Sources */,
+				21CEF90C298F6A44008351F6 /* NodesService.swift in Sources */,
 				2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */,
 				214945F629891C53005FEB6F /* KeychainService.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
@@ -735,6 +810,7 @@
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,
 				214945EB2988B8DE005FEB6F /* BaseService.swift in Sources */,
 				2110B30E297070AD000B1B1C /* IPAddressTool.swift in Sources */,
+				21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */,
 				2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */,
 				21F828B72972E50D0094B995 /* SignUpDataSource.swift in Sources */,
 				2110B2D1296DA1C6000B1B1C /* BaseTabBarViewModel.swift in Sources */,

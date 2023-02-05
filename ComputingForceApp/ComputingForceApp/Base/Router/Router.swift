@@ -11,14 +11,16 @@ import URLNavigator
 
 final class Router {
     enum Route: String {
-        case launchView     = "app://launchView"
-        case mainView       = "app://mainView"
-        case landing        = "app://landing"
-        case signIn         = "app://signIn"
-        case signUp         = "app://signUp"
+        case launchView         = "app://launchView"
+        case mainView           = "app://mainView"
+        case landing            = "app://landing"
+        case signIn             = "app://signIn"
+        case signUp             = "app://signUp"
+        case ComputingNodes     = "app://computingNodes"
     }
     
     var mainTabbarController: BaseTabBarController?
+    var computingNodesNavigationController: BaseNavigationController?
     private let navigator: Navigator
     private var cancellables = Set<AnyCancellable>()
     var keyWindow: UIWindow {
@@ -57,6 +59,13 @@ final class Router {
             self.mainTabbarController = tabarController
             return self.mainTabbarController
         }
+        
+        navigator.register(Route.ComputingNodes.rawValue) { _, _, _ in
+            let viewModel = NodesListViewModel()
+            let controller = NodesListViewController(viewModel: viewModel)
+            controller.tabBarItem = viewModel.tabbarItem
+            return controller
+        }
     }
     
     private func transitionEventHandler(route: Route) {
@@ -76,7 +85,7 @@ final class Router {
             navigator.push(signUpViewController)
         case .mainView:
             self.keyWindow.rootViewController = self.getViewController(route: .mainView)
-        case .launchView:
+        default:
             break
         }
     }

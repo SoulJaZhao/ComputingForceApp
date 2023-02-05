@@ -24,7 +24,9 @@ class BaseTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         subscribeToViewModel()
+        setupViewControllers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,5 +45,13 @@ class BaseTabBarController: UITabBarController {
                 }
             }
             .store(in: &cancellables)
+    }
+    
+    private func setupViewControllers() {
+        self.viewControllers = viewModel.subViewControllers()
+    }
+    
+    private func setupUI() {
+        
     }
 }

@@ -25,7 +25,7 @@ extension NetworkServiceProtocol {
         MoyaProvider<AbstractType>()
     }
     
-    func excute<T>(target: AbstractType, responseModel: T.Type) -> AnyPublisher<T, APIError> where T: Decodable {
+    func excute<T>(target: AbstractType, responseModel: T.Type, refreshAccessToken: Bool = true) -> AnyPublisher<T, APIError> where T: Decodable {
         Future<T, APIError> { promise in
             self.provider.request(target) { result in
                 switch result {
@@ -33,6 +33,9 @@ extension NetworkServiceProtocol {
                     do {
                         let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
                         let response = try filteredResponse.map(responseModel, atKeyPath: "data")
+                        if let accessToken = moyaResponse.response?.value(forHTTPHeaderField: "Refresh-Token") {
+                            AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.refreshAccessToken(token: accessToken)
+                        }
                         promise(.success(response))
                     } catch {
                         do {
