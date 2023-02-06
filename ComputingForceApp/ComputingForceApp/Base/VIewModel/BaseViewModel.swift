@@ -9,6 +9,11 @@ import Foundation
 import Combine
 
 class BaseViewModel {
+    enum RefreshHeaderEvent {
+        case start
+        case stop
+    }
+    
     enum LoadingEvent {
         case on
         case off

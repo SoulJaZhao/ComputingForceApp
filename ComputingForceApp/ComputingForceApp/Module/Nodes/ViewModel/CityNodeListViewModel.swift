@@ -1,26 +1,21 @@
 //
-//  NodesListViewModel.swift
+//  CityNodeListViewModel.swift
 //  ComputingForceApp
 //
 //  Created by 赵龙 on 2023/2/5.
 //
 
-import UIKit
+import Foundation
 import Combine
 
-class NodesListViewModel: BaseViewModel {
+class CityNodeListViewModel: BaseViewModel {
     
     override func getXibName() -> String {
-        return "NodesListViewController"
-    }
-    
-    var tabbarItem: UITabBarItem {
-        let item = UITabBarItem(title: Localization.text(key: "Nodes"), image: UIImage.init(systemName: "book"), selectedImage: UIImage.init(systemName: "book.fill"))
-        return item
+        return "CityNodeListViewController"
     }
     
     let nodesService = NodesService()
-    let cellIdentifier = "NodesListCell"
+    let cellIdentifier = "CityNodeListCell"
     private var cancellables = Set<AnyCancellable>()
     
     private var refreshHeaderSubject = PassthroughSubject<RefreshHeaderEvent, Never>()
@@ -28,22 +23,27 @@ class NodesListViewModel: BaseViewModel {
         return refreshHeaderSubject.eraseToAnyPublisher()
     }()
     
-    public var nodes: [CityNode] = []
+    let cityNode: CityNode
+    
+    var nodes: [Node] = []
+    
+    init(cityNode: CityNode) {
+        self.cityNode = cityNode
+        super.init()
+    }
     
     func startFetchingData() {
-        if AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.isLoggedIn == false || nodes.count > 0 {
-            return
-        }
         refreshHeaderSubject.send(.start)
     }
     
     func fetchNodesForEachCity() {
-        nodesService.fetchSummuryForEachCity()
+        nodesService.fetchNodes(cityNode: self.cityNode)
             .sink { [weak self] completion in
                 guard let self = self else { return }
                 self.refreshHeaderSubject.send(.stop)
                 switch completion {
-                case .failure:
+                case .failure(let error):
+                    print(error)
                     self.alertEventSubject.send(.genericAlert)
                 case .finished:
                     break
@@ -54,11 +54,5 @@ class NodesListViewModel: BaseViewModel {
             }
             .store(in: &cancellables)
         
-    }
-    
-    func getCityNodeListViewController(node: CityNode) -> CityNodeListViewController {
-        let viewModel = CityNodeListViewModel(cityNode: node)
-        let viewController = CityNodeListViewController(viewModel: viewModel)
-        return viewController
     }
 }

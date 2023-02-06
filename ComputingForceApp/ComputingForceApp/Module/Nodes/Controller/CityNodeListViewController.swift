@@ -1,5 +1,5 @@
 //
-//  NodesListViewController.swift
+//  CityNodeListViewController.swift
 //  ComputingForceApp
 //
 //  Created by 赵龙 on 2023/2/5.
@@ -9,31 +9,34 @@ import UIKit
 import Combine
 import MJRefresh
 
-class NodesListViewController: BaseViewController<NodesListViewModel> {
-    
+class CityNodeListViewController: BaseViewController<CityNodeListViewModel> {
+
     @IBOutlet weak var tableView: UITableView!
     
-    private var cancellables = Set<AnyCancellable>()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
         viewModel.startFetchingData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+    private func setupUI() {
+        self.title = viewModel.cityNode.name
+        
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.fetchNodesForEachCity()
+        })
+        
+        let nib = UINib(nibName: viewModel.cellIdentifier, bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: viewModel.cellIdentifier)
+        tableView.estimatedRowHeight = 180
+        tableView.sectionHeaderHeight = 0.01
+        tableView.sectionFooterHeight = 0.01
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
-    override func bind(viewModel: NodesListViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
+    override func bind(viewModel: CityNodeListViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
         super.bind(viewModel: viewModel, storeBindingsIn: &cancellables)
-        
         viewModel.refreHeaderPublisher
             .receive(on: RunLoop.main)
             .sink { event in
@@ -58,48 +61,28 @@ class NodesListViewController: BaseViewController<NodesListViewModel> {
             }
             .store(in: &cancellables)
     }
-    
-    private func setupUI() {
-        self.navigationItem.title = Localization.text(key: "Nodes")
-        
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.fetchNodesForEachCity()
-        })
-        
-        let nib = UINib(nibName: viewModel.cellIdentifier, bundle: .main)
-        tableView.register(nib, forCellReuseIdentifier: viewModel.cellIdentifier)
-        tableView.estimatedRowHeight = 180
-        tableView.sectionHeaderHeight = 0.01
-        tableView.sectionFooterHeight = 0.01
-        tableView.rowHeight = UITableView.automaticDimension
-    }
 }
 
-extension NodesListViewController: UITableViewDataSource {
+extension CityNodeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.nodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellIdentifier) as? NodesListCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellIdentifier) as? CityNodeListCell else {
             return UITableViewCell()
         }
         guard let node = viewModel.nodes[safe: indexPath.row] else {
             return UITableViewCell()
         }
-        cell.configure(city: node.name, count: node.count)
+        cell.configure(node: node)
         return cell
     }
 }
 
-extension NodesListViewController: UITableViewDelegate {
+extension CityNodeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if let node = viewModel.nodes[safe: indexPath.row] {
-            let vc = viewModel.getCityNodeListViewController(node: node)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        
     }
 }
-

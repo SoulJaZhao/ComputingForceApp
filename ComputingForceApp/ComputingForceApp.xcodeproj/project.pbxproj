@@ -51,6 +51,11 @@
 		21CEF90F298F6F16008351F6 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90E298F6F16008351F6 /* Nodes.swift */; };
 		21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF911298FBA2D008351F6 /* NodesListCell.swift */; };
 		21CEF914298FBA2D008351F6 /* NodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF912298FBA2D008351F6 /* NodesListCell.xib */; };
+		21CEF917298FEA92008351F6 /* CityNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */; };
+		21CEF918298FEA92008351F6 /* CityNodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF916298FEA92008351F6 /* CityNodeListViewController.xib */; };
+		21CEF91A298FEB01008351F6 /* CityNodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */; };
+		21CEF91D299133CD008351F6 /* CityNodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF91B299133CD008351F6 /* CityNodeListCell.swift */; };
+		21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF91C299133CD008351F6 /* CityNodeListCell.xib */; };
 		21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E668082965E4900061AE89 /* BaseNavigationController.swift */; };
 		21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289B2971ABD40094B995 /* UIImageExtension.swift */; };
 		21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289E2971ACB00094B995 /* UIColorExtension.swift */; };
@@ -111,6 +116,11 @@
 		21CEF90E298F6F16008351F6 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
 		21CEF911298FBA2D008351F6 /* NodesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListCell.swift; sourceTree = "<group>"; };
 		21CEF912298FBA2D008351F6 /* NodesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListCell.xib; sourceTree = "<group>"; };
+		21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListViewController.swift; sourceTree = "<group>"; };
+		21CEF916298FEA92008351F6 /* CityNodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityNodeListViewController.xib; sourceTree = "<group>"; };
+		21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListViewModel.swift; sourceTree = "<group>"; };
+		21CEF91B299133CD008351F6 /* CityNodeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListCell.swift; sourceTree = "<group>"; };
+		21CEF91C299133CD008351F6 /* CityNodeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityNodeListCell.xib; sourceTree = "<group>"; };
 		21E668082965E4900061AE89 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		21F8289B2971ABD40094B995 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		21F8289E2971ACB00094B995 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -474,6 +484,8 @@
 			children = (
 				21CEF904298F6191008351F6 /* NodesListViewController.swift */,
 				21CEF905298F6191008351F6 /* NodesListViewController.xib */,
+				21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */,
+				21CEF916298FEA92008351F6 /* CityNodeListViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -482,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				21CEF908298F61A8008351F6 /* NodesListViewModel.swift */,
+				21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -507,6 +520,8 @@
 			children = (
 				21CEF911298FBA2D008351F6 /* NodesListCell.swift */,
 				21CEF912298FBA2D008351F6 /* NodesListCell.xib */,
+				21CEF91B299133CD008351F6 /* CityNodeListCell.swift */,
+				21CEF91C299133CD008351F6 /* CityNodeListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,8 +730,10 @@
 				2110B2E9297011BB000B1B1C /* LoginViewController.xib in Resources */,
 				2110B2DC296DAA1F000B1B1C /* LandingViewController.xib in Resources */,
 				211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */,
+				21CEF918298FEA92008351F6 /* CityNodeListViewController.xib in Resources */,
 				2110B3272971968E000B1B1C /* LaunchViewController.xib in Resources */,
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
+				21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */,
 				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
 				21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */,
@@ -797,9 +814,11 @@
 				21F828B22972DD960094B995 /* CommonTextFieldCell.swift in Sources */,
 				21CEF90C298F6A44008351F6 /* NodesService.swift in Sources */,
 				2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */,
+				21CEF91D299133CD008351F6 /* CityNodeListCell.swift in Sources */,
 				214945F629891C53005FEB6F /* KeychainService.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
 				2110B3262971968E000B1B1C /* LaunchViewController.swift in Sources */,
+				21CEF91A298FEB01008351F6 /* CityNodeListViewModel.swift in Sources */,
 				2110B2DE296DAA2D000B1B1C /* BaseViewController.swift in Sources */,
 				2110B30929704C02000B1B1C /* SignUpViewController.swift in Sources */,
 				21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */,
@@ -813,6 +832,7 @@
 				21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */,
 				2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */,
 				21F828B72972E50D0094B995 /* SignUpDataSource.swift in Sources */,
+				21CEF917298FEA92008351F6 /* CityNodeListViewController.swift in Sources */,
 				2110B2D1296DA1C6000B1B1C /* BaseTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

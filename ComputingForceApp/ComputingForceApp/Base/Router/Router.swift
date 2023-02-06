@@ -64,6 +64,7 @@ final class Router {
             let viewModel = NodesListViewModel()
             let controller = NodesListViewController(viewModel: viewModel)
             controller.tabBarItem = viewModel.tabbarItem
+            controller.hidesBottomBarWhenPushed = true
             return controller
         }
     }

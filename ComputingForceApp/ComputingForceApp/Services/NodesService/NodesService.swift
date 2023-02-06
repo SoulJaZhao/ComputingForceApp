@@ -11,6 +11,7 @@ import Moya
 
 enum NodeAPI {
     case sumAllCity
+    case findNodes(cityNode: CityNode)
 }
 
 extension NodeAPI : TargetType {
@@ -27,12 +28,14 @@ extension NodeAPI : TargetType {
         switch self {
         case .sumAllCity:
             return "/api/\(AppContext.context.environment.version.rawValue)/neo4j/find/sumAllCity"
+        case .findNodes(cityNode: _):
+            return "/api/\(AppContext.context.environment.version.rawValue)/neo4j/find/byCity"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .sumAllCity:
+        case .sumAllCity, .findNodes(cityNode: _):
             return .get
         }
     }
@@ -41,6 +44,8 @@ extension NodeAPI : TargetType {
         switch self {
         case .sumAllCity:
             return .requestPlain
+        case .findNodes(cityNode: let node):
+            return .requestParameters(parameters: ["city" : node.name], encoding: URLEncoding.default)
         }
     }
     
@@ -76,6 +81,11 @@ class NodesService: NetworkServiceProtocol {
                 
                 return Just(sortedNodes)
             }
+            .eraseToAnyPublisher()
+    }
+    
+    func fetchNodes(cityNode: CityNode) -> AnyPublisher<[Node], APIError> {
+        return self.excute(target: .findNodes(cityNode: cityNode), responseModel: [Node].self)
             .eraseToAnyPublisher()
     }
 }
