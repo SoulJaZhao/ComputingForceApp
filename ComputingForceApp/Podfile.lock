@@ -35,7 +35,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.5.11)
   - KeychainAccess (= 4.2.2)
   - LKAlertController (= 1.12.2)
-  - MJRefresh
+  - MJRefresh (= 3.7.5)
   - Moya (~> 15.0)
   - NVActivityIndicatorView (= 5.1.1)
   - SDWebImage (= 5.14.3)
@@ -79,6 +79,6 @@ SPEC CHECKSUMS:
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: f22d9ea011f0b7a4c60c613d10f282b6795ef8dd
+PODFILE CHECKSUM: 2d428bd1e0be2987243e389fa801ddd9324821ec
 
 COCOAPODS: 1.11.3

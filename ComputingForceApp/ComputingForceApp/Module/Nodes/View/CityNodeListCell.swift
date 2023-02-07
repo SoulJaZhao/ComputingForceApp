@@ -25,9 +25,9 @@ class CityNodeListCell: UITableViewCell {
     
     func configure(node: Node) {
         nameLabel.text = node.properties?.name
-        cpuLabel.text = node.properties?.CPU
-        gpuLabel.text = node.properties?.GPU
-        memoryLabel.text = node.properties?.memory
+        cpuLabel.text = "CPU: " + (node.properties?.CPU ?? "")
+        gpuLabel.text = "GPU: " + (node.properties?.GPU ?? "")
+        memoryLabel.text = "Memory: " + (node.properties?.memory ?? "")
     }
     
 }

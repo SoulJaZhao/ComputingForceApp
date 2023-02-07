@@ -38,7 +38,7 @@
 		214945EB2988B8DE005FEB6F /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945EA2988B8DE005FEB6F /* BaseService.swift */; };
 		214945EE2988D66B005FEB6F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945ED2988D66B005FEB6F /* Environment.swift */; };
 		214945F12988F75E005FEB6F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F02988F75E005FEB6F /* BaseModel.swift */; };
-		214945F42988F826005FEB6F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F32988F826005FEB6F /* UserModel.swift */; };
+		214945F42988F826005FEB6F /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F32988F826005FEB6F /* UserEntity.swift */; };
 		214945F629891C53005FEB6F /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F529891C53005FEB6F /* KeychainService.swift */; };
 		214945FD29893EB2005FEB6F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214945F929893EB2005FEB6F /* UIButtonExtension.swift */; };
 		21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494600298943A3005FEB6F /* DependencyInjectionService.swift */; };
@@ -48,7 +48,7 @@
 		21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF905298F6191008351F6 /* NodesListViewController.xib */; };
 		21CEF909298F61A8008351F6 /* NodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF908298F61A8008351F6 /* NodesListViewModel.swift */; };
 		21CEF90C298F6A44008351F6 /* NodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90B298F6A44008351F6 /* NodesService.swift */; };
-		21CEF90F298F6F16008351F6 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90E298F6F16008351F6 /* Nodes.swift */; };
+		21CEF90F298F6F16008351F6 /* NodesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF90E298F6F16008351F6 /* NodesEntity.swift */; };
 		21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF911298FBA2D008351F6 /* NodesListCell.swift */; };
 		21CEF914298FBA2D008351F6 /* NodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF912298FBA2D008351F6 /* NodesListCell.xib */; };
 		21CEF917298FEA92008351F6 /* CityNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */; };
@@ -103,7 +103,7 @@
 		214945EA2988B8DE005FEB6F /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		214945ED2988D66B005FEB6F /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		214945F02988F75E005FEB6F /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		214945F32988F826005FEB6F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		214945F32988F826005FEB6F /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		214945F529891C53005FEB6F /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		214945F929893EB2005FEB6F /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		21494600298943A3005FEB6F /* DependencyInjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionService.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		21CEF905298F6191008351F6 /* NodesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListViewController.xib; sourceTree = "<group>"; };
 		21CEF908298F61A8008351F6 /* NodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewModel.swift; sourceTree = "<group>"; };
 		21CEF90B298F6A44008351F6 /* NodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesService.swift; sourceTree = "<group>"; };
-		21CEF90E298F6F16008351F6 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
+		21CEF90E298F6F16008351F6 /* NodesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesEntity.swift; sourceTree = "<group>"; };
 		21CEF911298FBA2D008351F6 /* NodesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListCell.swift; sourceTree = "<group>"; };
 		21CEF912298FBA2D008351F6 /* NodesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListCell.xib; sourceTree = "<group>"; };
 		21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListViewController.swift; sourceTree = "<group>"; };
@@ -431,7 +431,7 @@
 		214945F22988F805005FEB6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				214945F32988F826005FEB6F /* UserModel.swift */,
+				214945F32988F826005FEB6F /* UserEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 		21CEF90D298F6EDF008351F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				21CEF90E298F6F16008351F6 /* Nodes.swift */,
+				21CEF90E298F6F16008351F6 /* NodesEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -803,9 +803,9 @@
 				21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */,
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
 				2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */,
-				214945F42988F826005FEB6F /* UserModel.swift in Sources */,
+				214945F42988F826005FEB6F /* UserEntity.swift in Sources */,
 				21F828A22971B1E50094B995 /* UIViewExtension.swift in Sources */,
-				21CEF90F298F6F16008351F6 /* Nodes.swift in Sources */,
+				21CEF90F298F6F16008351F6 /* NodesEntity.swift in Sources */,
 				214945E72988B7FA005FEB6F /* AuthenticationService.swift in Sources */,
 				2110B2D5296DA7D9000B1B1C /* Router.swift in Sources */,
 				2110B32A29719C5B000B1B1C /* Theme.swift in Sources */,
