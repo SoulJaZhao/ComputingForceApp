@@ -29,8 +29,6 @@ class AddCityNodeViewModel: BaseViewModel {
     
     @Published var province: String?
     @Published var city: String?
-    @Published var attributes:[AddCityNodeRowViewModel] = []
-    
     
     override func getXibName() -> String {
         return "AddCityNodeViewController"
@@ -43,7 +41,31 @@ class AddCityNodeViewModel: BaseViewModel {
     
     override init() {
         super.init()
-        attributes = dataSource.attributeSection.rowViewModels
+
+    }
+    
+    func addRowViewModel() -> Bool {
+        if canAddRowViewModel() == false {
+            return false
+        } else {
+            let rowViewModel = AddCityNodeRowViewModel()
+            dataSource.attributeSection.rowViewModels.append(rowViewModel)
+            return true
+        }
+    }
+    
+    func canAddRowViewModel() -> Bool {
+        var isValidate = true
+        dataSource.attributeSection.rowViewModels.forEach { row in
+            if let key = row.key, let value = row.value {
+                if (key.isEmpty || value.isEmpty) {
+                    isValidate = false
+                }
+            } else {
+                isValidate = false
+            }
+        }
+        return isValidate
     }
 }
 
@@ -68,7 +90,7 @@ final class AddCityDataSource {
 final class AddCityNodeSectionViewModel {
     let sectionType: AddCityNodeViewModel.SectionType
     
-    var rowViewModels: [AddCityNodeRowViewModel] = []
+    @Published var rowViewModels: [AddCityNodeRowViewModel] = []
     
     init(sectionType: AddCityNodeViewModel.SectionType) {
         self.sectionType = sectionType

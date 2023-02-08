@@ -16,24 +16,6 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
     
     var addAttributeButton: UIButton?
     
-    private var isAddAttributeButtonEnablePublisher: AnyPublisher<Bool, Never> {
-        viewModel.$attributes
-            .allSatisfy({ rows in
-                if rows.isEmpty {
-                    return false
-                }
-                
-                var isValidate = true
-                rows.forEach { row in
-                    if (row.key == nil || row.value == nil) {
-                        isValidate = false
-                    }
-                }
-                return isValidate
-            })
-            .eraseToAnyPublisher()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -53,8 +35,13 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
         
         addAttributeButton = UIButton(type: .contactAdd)
         addAttributeButton?.controlEventPublisher(for: .touchUpInside)
-            .sink(receiveValue: { _ in
-                print("add")
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+                let result = self.viewModel.addRowViewModel()
+                if (result == false) {
+                    self.showGenericErrorAlert()
+                }
             })
             .store(in: &cancellables)
     }
@@ -62,11 +49,10 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
     override func bind(viewModel: AddCityNodeViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
         super.bind(viewModel: viewModel, storeBindingsIn: &cancellables)
         
-        isAddAttributeButtonEnablePublisher
+        viewModel.dataSource.attributeSection.$rowViewModels
             .receive(on: RunLoop.main)
-            .sink { [weak self] isEnable in
-                guard let self = self else { return }
-                self.addAttributeButton?.isUserInteractionEnabled = isEnable
+            .sink { rows in
+                self.2tableView.reloadData()
             }
             .store(in: &cancellables)
     }
@@ -114,7 +100,19 @@ extension AddCityNodeViewController: UITableViewDataSource {
                 }
                 .store(in: &cancellables)
         case .attribute:
-            cell.configure(mode: .both, primaryContent: nil, secondaryContent: nil, primaryPlaceholder: Localization.text(key: "Key"), secondaryPlaceholder: Localization.text(key: "Value"))
+            let rowViewModel = sectionViewModel.rowViewModels[safe: indexPath.row]
+            cell.configure(mode: .both, primaryContent: rowViewModel?.key, secondaryContent: rowViewModel?.value, primaryPlaceholder: Localization.text(key: "Key"), secondaryPlaceholder: Localization.text(key: "Value"))
+            cell.$primaryContent
+                .sink { content in
+                    rowViewModel?.key = content
+                }
+                .store(in: &cancellables)
+            cell.$secondaryContent
+                .sink { content in
+                    rowViewModel?.value = content
+                }
+                .store(in: &cancellables)
+            
         }
         
         return cell
