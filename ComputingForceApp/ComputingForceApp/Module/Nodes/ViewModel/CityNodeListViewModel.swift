@@ -53,6 +53,5 @@ class CityNodeListViewModel: BaseViewModel {
                 self.nodes = data
             }
             .store(in: &cancellables)
-        
     }
 }

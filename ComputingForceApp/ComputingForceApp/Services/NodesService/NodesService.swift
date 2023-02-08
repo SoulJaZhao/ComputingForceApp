@@ -72,7 +72,7 @@ class NodesService: NetworkServiceProtocol {
                 }
                 
                 let filteredNodes = nodes.filter { node in
-                    node.count > 0
+                    node.count >= 0
                 }
                 
                 sortedNodes = filteredNodes.sorted(by: {

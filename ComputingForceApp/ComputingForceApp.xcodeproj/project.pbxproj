@@ -44,6 +44,12 @@
 		21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494600298943A3005FEB6F /* DependencyInjectionService.swift */; };
 		2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */; };
 		21494607298A88CB005FEB6F /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494606298A88CB005FEB6F /* CredentialService.swift */; };
+		21BE301F2993B6E900377DFA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE30192993B6E900377DFA /* UIColor+Utils.swift */; };
+		21BE30202993B6E900377DFA /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301A2993B6E900377DFA /* CGRect+Utils.swift */; };
+		21BE30212993B6E900377DFA /* UIScreen+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301B2993B6E900377DFA /* UIScreen+Utils.swift */; };
+		21BE30222993B6E900377DFA /* Object+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301C2993B6E900377DFA /* Object+ClassName.swift */; };
+		21BE30232993B6E900377DFA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301D2993B6E900377DFA /* Font.swift */; };
+		21BE30242993B6E900377DFA /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301E2993B6E900377DFA /* UIView+Nib.swift */; };
 		21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF904298F6191008351F6 /* NodesListViewController.swift */; };
 		21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF905298F6191008351F6 /* NodesListViewController.xib */; };
 		21CEF909298F61A8008351F6 /* NodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF908298F61A8008351F6 /* NodesListViewModel.swift */; };
@@ -109,6 +115,12 @@
 		21494600298943A3005FEB6F /* DependencyInjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionService.swift; sourceTree = "<group>"; };
 		2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		21494606298A88CB005FEB6F /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
+		21BE30192993B6E900377DFA /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		21BE301A2993B6E900377DFA /* CGRect+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
+		21BE301B2993B6E900377DFA /* UIScreen+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Utils.swift"; sourceTree = "<group>"; };
+		21BE301C2993B6E900377DFA /* Object+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+ClassName.swift"; sourceTree = "<group>"; };
+		21BE301D2993B6E900377DFA /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		21BE301E2993B6E900377DFA /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		21CEF904298F6191008351F6 /* NodesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewController.swift; sourceTree = "<group>"; };
 		21CEF905298F6191008351F6 /* NodesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListViewController.xib; sourceTree = "<group>"; };
 		21CEF908298F61A8008351F6 /* NodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewModel.swift; sourceTree = "<group>"; };
@@ -279,6 +291,7 @@
 		2110B2F929704327000B1B1C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				21BE30182993B6E900377DFA /* Utils */,
 				2110B2FA29704357000B1B1C /* Localization.swift */,
 				2110B30D297070AD000B1B1C /* IPAddressTool.swift */,
 			);
@@ -466,6 +479,19 @@
 				21494606298A88CB005FEB6F /* CredentialService.swift */,
 			);
 			path = CredentialService;
+			sourceTree = "<group>";
+		};
+		21BE30182993B6E900377DFA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				21BE30192993B6E900377DFA /* UIColor+Utils.swift */,
+				21BE301A2993B6E900377DFA /* CGRect+Utils.swift */,
+				21BE301B2993B6E900377DFA /* UIScreen+Utils.swift */,
+				21BE301C2993B6E900377DFA /* Object+ClassName.swift */,
+				21BE301D2993B6E900377DFA /* Font.swift */,
+				21BE301E2993B6E900377DFA /* UIView+Nib.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		21CEF901298F6139008351F6 /* Nodes */ = {
@@ -798,9 +824,11 @@
 				2110B30C29704C10000B1B1C /* SignUpViewModel.swift in Sources */,
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
 				21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */,
+				21BE30242993B6E900377DFA /* UIView+Nib.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */,
 				21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */,
+				21BE301F2993B6E900377DFA /* UIColor+Utils.swift in Sources */,
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
 				2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */,
 				214945F42988F826005FEB6F /* UserEntity.swift in Sources */,
@@ -814,12 +842,14 @@
 				21F828B22972DD960094B995 /* CommonTextFieldCell.swift in Sources */,
 				21CEF90C298F6A44008351F6 /* NodesService.swift in Sources */,
 				2110B2EC297011F5000B1B1C /* LoginViewModel.swift in Sources */,
+				21BE30212993B6E900377DFA /* UIScreen+Utils.swift in Sources */,
 				21CEF91D299133CD008351F6 /* CityNodeListCell.swift in Sources */,
 				214945F629891C53005FEB6F /* KeychainService.swift in Sources */,
 				2110B2E3296DABD2000B1B1C /* LandingViewModel.swift in Sources */,
 				2110B3262971968E000B1B1C /* LaunchViewController.swift in Sources */,
 				21CEF91A298FEB01008351F6 /* CityNodeListViewModel.swift in Sources */,
 				2110B2DE296DAA2D000B1B1C /* BaseViewController.swift in Sources */,
+				21BE30232993B6E900377DFA /* Font.swift in Sources */,
 				2110B30929704C02000B1B1C /* SignUpViewController.swift in Sources */,
 				21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */,
 				214945FD29893EB2005FEB6F /* UIButtonExtension.swift in Sources */,
@@ -828,6 +858,8 @@
 				2110B2FB29704357000B1B1C /* Localization.swift in Sources */,
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,
 				214945EB2988B8DE005FEB6F /* BaseService.swift in Sources */,
+				21BE30202993B6E900377DFA /* CGRect+Utils.swift in Sources */,
+				21BE30222993B6E900377DFA /* Object+ClassName.swift in Sources */,
 				2110B30E297070AD000B1B1C /* IPAddressTool.swift in Sources */,
 				21CEF913298FBA2D008351F6 /* NodesListCell.swift in Sources */,
 				2110B2E8297011BB000B1B1C /* LoginViewController.swift in Sources */,

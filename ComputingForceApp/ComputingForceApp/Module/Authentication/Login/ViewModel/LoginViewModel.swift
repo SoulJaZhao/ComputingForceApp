@@ -40,6 +40,10 @@ class LoginViewModel: BaseViewModel {
                     }
                     self.loadingEventSubject.send(.off)
                 case .failure(_):
+                    AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.clear()
+                    #warning("Need remove")
+                    let user = User.init(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDQ4NTQwNzYsImlhdCI6MTY3MzMxODA3NiwibmJmIjoxNjczMzE4MDc2LCJzdWIiOiIxLDEifQ.2cZIXujUsgbyB0uiz0pOOlRyiRqklF2EFwiD189CEfg")
+                    AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.set(user: user)
                     self.loadingEventSubject.send(.off)
                     self.alertEventSubject.send(.genericAlert)
                 }
