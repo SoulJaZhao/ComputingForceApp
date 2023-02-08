@@ -21,3 +21,9 @@
 "Nodes" = "Nodes";
 "NodesNumber" = "Nodes number";
 "AddingCity" = "Adding city";
+"Province" = "Province";
+"City" = "City";
+"Attribute" = "Attribute";
+"Close" = "Close";
+"Key" = "Key";
+"Value" = "Value";

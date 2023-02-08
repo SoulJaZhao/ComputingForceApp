@@ -61,4 +61,10 @@ class NodesListViewModel: BaseViewModel {
         let viewController = CityNodeListViewController(viewModel: viewModel)
         return viewController
     }
+    
+    func getAddCityNodeViewController() -> AddCityNodeViewController {
+        let viewModel = AddCityNodeViewModel()
+        let viewController = AddCityNodeViewController(viewModel: viewModel)
+        return viewController
+    }
 }

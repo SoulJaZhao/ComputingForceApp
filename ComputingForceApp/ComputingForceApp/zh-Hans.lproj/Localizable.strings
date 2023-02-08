@@ -21,3 +21,9 @@
 "Nodes" = "节点";
 "NodesNumber" = "节点数";
 "AddingCity" = "添加城市";
+"Province" = "省份";
+"City" = "城市";
+"Attribute" = "属性";
+"Close" = "关闭";
+"Key" = "键";
+"Value" = "值";

@@ -44,12 +44,17 @@
 		21494601298943A3005FEB6F /* DependencyInjectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494600298943A3005FEB6F /* DependencyInjectionService.swift */; };
 		2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */; };
 		21494607298A88CB005FEB6F /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21494606298A88CB005FEB6F /* CredentialService.swift */; };
+		2155858C2993E70200B87A1D /* TextFieldsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2155858A2993E70100B87A1D /* TextFieldsCell.swift */; };
+		2155858D2993E70200B87A1D /* TextFieldsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2155858B2993E70100B87A1D /* TextFieldsCell.xib */; };
 		21BE301F2993B6E900377DFA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE30192993B6E900377DFA /* UIColor+Utils.swift */; };
 		21BE30202993B6E900377DFA /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301A2993B6E900377DFA /* CGRect+Utils.swift */; };
 		21BE30212993B6E900377DFA /* UIScreen+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301B2993B6E900377DFA /* UIScreen+Utils.swift */; };
 		21BE30222993B6E900377DFA /* Object+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301C2993B6E900377DFA /* Object+ClassName.swift */; };
 		21BE30232993B6E900377DFA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301D2993B6E900377DFA /* Font.swift */; };
 		21BE30242993B6E900377DFA /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE301E2993B6E900377DFA /* UIView+Nib.swift */; };
+		21BE30272993D5AC00377DFA /* AddCityNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE30252993D5AC00377DFA /* AddCityNodeViewController.swift */; };
+		21BE30282993D5AC00377DFA /* AddCityNodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BE30262993D5AC00377DFA /* AddCityNodeViewController.xib */; };
+		21BE302A2993D5CA00377DFA /* AddCityNodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BE30292993D5CA00377DFA /* AddCityNodeViewModel.swift */; };
 		21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF904298F6191008351F6 /* NodesListViewController.swift */; };
 		21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF905298F6191008351F6 /* NodesListViewController.xib */; };
 		21CEF909298F61A8008351F6 /* NodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF908298F61A8008351F6 /* NodesListViewModel.swift */; };
@@ -115,12 +120,17 @@
 		21494600298943A3005FEB6F /* DependencyInjectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionService.swift; sourceTree = "<group>"; };
 		2149460329894B5D005FEB6F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		21494606298A88CB005FEB6F /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
+		2155858A2993E70100B87A1D /* TextFieldsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsCell.swift; sourceTree = "<group>"; };
+		2155858B2993E70100B87A1D /* TextFieldsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldsCell.xib; sourceTree = "<group>"; };
 		21BE30192993B6E900377DFA /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		21BE301A2993B6E900377DFA /* CGRect+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
 		21BE301B2993B6E900377DFA /* UIScreen+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Utils.swift"; sourceTree = "<group>"; };
 		21BE301C2993B6E900377DFA /* Object+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+ClassName.swift"; sourceTree = "<group>"; };
 		21BE301D2993B6E900377DFA /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		21BE301E2993B6E900377DFA /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		21BE30252993D5AC00377DFA /* AddCityNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityNodeViewController.swift; sourceTree = "<group>"; };
+		21BE30262993D5AC00377DFA /* AddCityNodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCityNodeViewController.xib; sourceTree = "<group>"; };
+		21BE30292993D5CA00377DFA /* AddCityNodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityNodeViewModel.swift; sourceTree = "<group>"; };
 		21CEF904298F6191008351F6 /* NodesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewController.swift; sourceTree = "<group>"; };
 		21CEF905298F6191008351F6 /* NodesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodesListViewController.xib; sourceTree = "<group>"; };
 		21CEF908298F61A8008351F6 /* NodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewModel.swift; sourceTree = "<group>"; };
@@ -512,6 +522,8 @@
 				21CEF905298F6191008351F6 /* NodesListViewController.xib */,
 				21CEF915298FEA92008351F6 /* CityNodeListViewController.swift */,
 				21CEF916298FEA92008351F6 /* CityNodeListViewController.xib */,
+				21BE30252993D5AC00377DFA /* AddCityNodeViewController.swift */,
+				21BE30262993D5AC00377DFA /* AddCityNodeViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +533,7 @@
 			children = (
 				21CEF908298F61A8008351F6 /* NodesListViewModel.swift */,
 				21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */,
+				21BE30292993D5CA00377DFA /* AddCityNodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -640,6 +653,8 @@
 			children = (
 				21F828B02972DD960094B995 /* CommonTextFieldCell.swift */,
 				21F828B12972DD960094B995 /* CommonTextFieldCell.xib */,
+				2155858A2993E70100B87A1D /* TextFieldsCell.swift */,
+				2155858B2993E70100B87A1D /* TextFieldsCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -760,9 +775,11 @@
 				2110B3272971968E000B1B1C /* LaunchViewController.xib in Resources */,
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
 				21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */,
+				21BE30282993D5AC00377DFA /* AddCityNodeViewController.xib in Resources */,
 				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
 				21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */,
+				2155858D2993E70200B87A1D /* TextFieldsCell.xib in Resources */,
 				2118221F2965D37400BF8490 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +842,7 @@
 				2110B2E1296DABB6000B1B1C /* BaseViewModel.swift in Sources */,
 				21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */,
 				21BE30242993B6E900377DFA /* UIView+Nib.swift in Sources */,
+				21BE30272993D5AC00377DFA /* AddCityNodeViewController.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */,
 				21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */,
@@ -832,6 +850,7 @@
 				2110B2DB296DAA1F000B1B1C /* LandingViewController.swift in Sources */,
 				2149460429894B5D005FEB6F /* ActivityIndicatorManager.swift in Sources */,
 				214945F42988F826005FEB6F /* UserEntity.swift in Sources */,
+				21BE302A2993D5CA00377DFA /* AddCityNodeViewModel.swift in Sources */,
 				21F828A22971B1E50094B995 /* UIViewExtension.swift in Sources */,
 				21CEF90F298F6F16008351F6 /* NodesEntity.swift in Sources */,
 				214945E72988B7FA005FEB6F /* AuthenticationService.swift in Sources */,
@@ -854,6 +873,7 @@
 				21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */,
 				214945FD29893EB2005FEB6F /* UIButtonExtension.swift in Sources */,
 				21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */,
+				2155858C2993E70200B87A1D /* TextFieldsCell.swift in Sources */,
 				214945F12988F75E005FEB6F /* BaseModel.swift in Sources */,
 				2110B2FB29704357000B1B1C /* Localization.swift in Sources */,
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,

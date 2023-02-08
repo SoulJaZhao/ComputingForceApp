@@ -77,7 +77,9 @@ class NodesListViewController: BaseViewController<NodesListViewModel> {
     }
     
     @objc func addCityNode() {
-        
+        let viewController = viewModel.getAddCityNodeViewController()
+        let navigationController = BaseNavigationController(rootViewController: viewController)
+        self.present(navigationController, animated: true)
     }
 }
 
