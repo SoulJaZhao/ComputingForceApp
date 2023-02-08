@@ -19,10 +19,10 @@ class ActivityIndicatorManager {
     
     private init() {
         containerView = UIView(frame: UIScreen.main.bounds)
-        containerView.backgroundColor = AppContext.context.theme.blackColor.withAlphaComponent(0.8)
+        containerView.backgroundColor = AppContext.context.theme.blackColor.withAlphaComponent(0.2)
         let xPoint = (UIScreen.main.bounds.size.width - NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE.width) * 0.5
         let yPoint = (UIScreen.main.bounds.size.height - NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE.height) * 0.5
-        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: xPoint, y: yPoint), size: NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE), type: .audioEqualizer)
+        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: xPoint, y: yPoint), size: NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE), type: .pacman, color: AppContext.context.theme.blackColor)
         activityIndicatorView.isHidden = true
         containerView.addSubview(activityIndicatorView)
         keyWindow.addSubview(containerView)

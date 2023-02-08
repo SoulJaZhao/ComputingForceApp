@@ -76,7 +76,10 @@ class NodesService: NetworkServiceProtocol {
                 }
                 
                 sortedNodes = filteredNodes.sorted(by: {
-                    $0.count > $1.count
+                    if ($0.count == $1.count) {
+                        return $0.name < $1.name
+                    }
+                    return $0.count > $1.count
                 })
                 
                 return Just(sortedNodes)

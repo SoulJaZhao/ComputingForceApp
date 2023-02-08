@@ -61,6 +61,7 @@ class NodesListViewController: BaseViewController<NodesListViewModel> {
     
     private func setupUI() {
         self.navigationItem.title = Localization.text(key: "Nodes")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(addCityNode))
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
             guard let self = self else { return }
@@ -73,6 +74,10 @@ class NodesListViewController: BaseViewController<NodesListViewModel> {
         tableView.sectionHeaderHeight = 0.01
         tableView.sectionFooterHeight = 0.01
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    @objc func addCityNode() {
+        
     }
 }
 

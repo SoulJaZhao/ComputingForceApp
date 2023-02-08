@@ -17,5 +17,6 @@ target 'ComputingForceApp' do
     pod 'CombineCocoa'
     pod 'LKAlertController', '1.12.2'
     pod 'MJRefresh', '3.7.5'
+    pod 'SwiftEntryKit', '2.0.0'
     pod 'FLEX', :configurations => ['Debug']
 end

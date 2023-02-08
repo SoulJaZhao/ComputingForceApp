@@ -18,6 +18,7 @@ struct Theme {
     
     let whiteColor: UIColor = .white
     let blackColor: UIColor = .black
+    let lightGray: UIColor = .lightGray
     let blueButtonGradientStartColor = UIColor.init(hex: "4EC9E3")
     let blueButtonGradientEndColor = UIColor.init(hex: "027EBC")
     let navigationBarColor = UIColor.init(hex: "F9F9F9")

@@ -23,6 +23,7 @@ PODS:
     - SDWebImage/Core (= 5.14.3)
   - SDWebImage/Core (5.14.3)
   - SwiftAlgorithms (1.0.0)
+  - SwiftEntryKit (2.0.0)
   - Swinject (2.8.2)
   - URLNavigator (2.4.1)
 
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Moya (~> 15.0)
   - NVActivityIndicatorView (= 5.1.1)
   - SDWebImage (= 5.14.3)
+  - SwiftEntryKit (= 2.0.0)
   - Swinject (= 2.8.2)
   - URLNavigator (= 2.4.1)
 
@@ -58,6 +60,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - SDWebImage
     - SwiftAlgorithms
+    - SwiftEntryKit
     - Swinject
     - URLNavigator
 
@@ -76,9 +79,10 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: 9c36e66c8ce4620b41a7407698dda44211a96764
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+  SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
 
-PODFILE CHECKSUM: 2d428bd1e0be2987243e389fa801ddd9324821ec
+PODFILE CHECKSUM: b389f09dd3e3cae5ceca2f83949ad55bd1760925
 
 COCOAPODS: 1.11.3
