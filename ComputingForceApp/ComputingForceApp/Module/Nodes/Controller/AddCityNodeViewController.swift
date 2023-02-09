@@ -75,10 +75,12 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
     }
     
     @objc func close() {
+        self.view.endEditing(true)
         self.dismiss(animated: true)
     }
     
     @objc func addCityNode() {
+        self.view.endEditing(true)
         print("add")
     }
 }
