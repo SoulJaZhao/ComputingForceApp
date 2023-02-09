@@ -52,7 +52,7 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
         viewModel.dataSource.attributeSection.$rowViewModels
             .receive(on: RunLoop.main)
             .sink { rows in
-                self.2tableView.reloadData()
+                self.tableView.reloadData()
             }
             .store(in: &cancellables)
     }
@@ -87,14 +87,16 @@ extension AddCityNodeViewController: UITableViewDataSource {
         switch sectionViewModel.sectionType {
         case .province:
             cell.configure(mode: .primary, primaryContent: viewModel.province, secondaryContent: nil, primaryPlaceholder: Localization.text(key: "Province"))
-            cell.$primaryContent
+            cell.primaryTextField.textPublisher
+                .receive(on: RunLoop.main)
                 .sink { content in
                     self.viewModel.province = content
                 }
                 .store(in: &cancellables)
         case .city:
             cell.configure(mode: .primary, primaryContent: viewModel.city, secondaryContent: nil, primaryPlaceholder: Localization.text(key: "City"))
-            cell.$primaryContent
+            cell.primaryTextField.textPublisher
+                .receive(on: RunLoop.main)
                 .sink { content in
                     self.viewModel.city = content
                 }
@@ -102,12 +104,14 @@ extension AddCityNodeViewController: UITableViewDataSource {
         case .attribute:
             let rowViewModel = sectionViewModel.rowViewModels[safe: indexPath.row]
             cell.configure(mode: .both, primaryContent: rowViewModel?.key, secondaryContent: rowViewModel?.value, primaryPlaceholder: Localization.text(key: "Key"), secondaryPlaceholder: Localization.text(key: "Value"))
-            cell.$primaryContent
+            cell.primaryTextField.textPublisher
+                .receive(on: RunLoop.main)
                 .sink { content in
                     rowViewModel?.key = content
                 }
                 .store(in: &cancellables)
-            cell.$secondaryContent
+            cell.secondaryTextField.textPublisher
+                .receive(on: RunLoop.main)
                 .sink { content in
                     rowViewModel?.value = content
                 }

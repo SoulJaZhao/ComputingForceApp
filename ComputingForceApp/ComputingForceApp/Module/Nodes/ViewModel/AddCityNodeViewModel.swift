@@ -54,7 +54,7 @@ class AddCityNodeViewModel: BaseViewModel {
         }
     }
     
-    func canAddRowViewModel() -> Bool {
+    private func canAddRowViewModel() -> Bool {
         var isValidate = true
         dataSource.attributeSection.rowViewModels.forEach { row in
             if let key = row.key, let value = row.value {
