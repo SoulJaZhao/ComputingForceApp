@@ -52,8 +52,10 @@ class NodesListViewController: BaseViewController<NodesListViewModel> {
         viewModel.alertEventSubject
             .sink { event in
                 switch event {
-                case .genericAlert:
+                case .genericErrorAlert:
                     self.showGenericErrorAlert()
+                default:
+                    break
                 }
             }
             .store(in: &cancellables)

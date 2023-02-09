@@ -77,8 +77,10 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         viewModel.alertEventSubject
             .sink { event in
                 switch event {
-                case .genericAlert:
+                case .genericErrorAlert:
                     self.showGenericErrorAlert()
+                case .genericSuccessAlert:
+                    break
                 }
             }
             .store(in: &cancellables)

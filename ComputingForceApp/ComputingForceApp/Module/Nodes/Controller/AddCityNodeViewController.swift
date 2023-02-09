@@ -53,6 +53,30 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
     override func bind(viewModel: AddCityNodeViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
         super.bind(viewModel: viewModel, storeBindingsIn: &cancellables)
         
+        viewModel.loadingEventSubject
+            .receive(on: RunLoop.main)
+            .sink { event in
+                switch event {
+                case .on:
+                    self.startLoading()
+                case .off:
+                    self.stopLoading()
+                }
+            }
+            .store(in: &cancellables)
+        
+        viewModel.alertEventSubject
+            .receive(on: RunLoop.main)
+            .sink { event in
+                switch event {
+                case .genericErrorAlert:
+                    self.showGenericErrorAlert()
+                case .genericSuccessAlert:
+                    self.showGenericSuccessAlert()
+                }
+            }
+            .store(in: &cancellables)
+        
         viewModel.dataSource.attributeSection.$rowViewModels
             .receive(on: RunLoop.main)
             .sink { rows in
@@ -81,7 +105,7 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
     
     @objc func addCityNode() {
         self.view.endEditing(true)
-        print("add")
+        viewModel.requestAddCityNode()
     }
 }
 

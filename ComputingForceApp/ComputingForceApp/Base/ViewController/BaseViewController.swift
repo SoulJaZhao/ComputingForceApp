@@ -114,6 +114,69 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
                          image: image)
     }
     
+    func showGenericSuccessAlert() {
+        var attributes = EKAttributes.centerFloat
+        attributes.hapticFeedbackType = .error
+        attributes.displayDuration = .infinity
+        attributes.entryBackground = .color(color: .standardBackground)
+        attributes.screenBackground = .color(color: .dimmedLightBackground)
+        attributes.shadow = .active(
+            with: .init(
+                color: .black,
+                opacity: 0.3,
+                radius: 8
+            )
+        )
+        attributes.screenInteraction = .dismiss
+        attributes.entryInteraction = .absorbTouches
+        attributes.scroll = .enabled(
+            swipeable: true,
+            pullbackAnimation: .jolt
+        )
+        attributes.roundCorners = .all(radius: 25)
+        attributes.entranceAnimation = .init(
+            translate: .init(
+                duration: 0.7,
+                spring: .init(damping: 1, initialVelocity: 0)
+            ),
+            scale: .init(
+                from: 1.05,
+                to: 1,
+                duration: 0.4,
+                spring: .init(damping: 1, initialVelocity: 0)
+            )
+        )
+        attributes.exitAnimation = .init(
+            translate: .init(duration: 0.2)
+        )
+        attributes.popBehavior = .animated(
+            animation: .init(
+                translate: .init(duration: 0.2)
+            )
+        )
+        attributes.positionConstraints.verticalOffset = 10
+        attributes.positionConstraints.size = .init(
+            width: .offset(value: 20),
+            height: .intrinsic
+        )
+        attributes.positionConstraints.maxSize = .init(
+            width: .constant(value: UIScreen.main.bounds.width),
+            height: .intrinsic
+        )
+        
+        let image = UIImage(named: "ic_done_all_white_48pt")!.withRenderingMode(.alwaysTemplate)
+        let title = Localization.text(key: "Success") ?? ""
+        let description = Localization.text(key: "SuccessfulDescription") ?? ""
+        showPopupMessage(attributes: attributes,
+                         title: title,
+                         titleColor: .text,
+                         description: description,
+                         descriptionColor: .subText,
+                         buttonTitleColor: .white,
+                         buttonBackgroundColor: .amber,
+                         image: image)
+    }
+    
     private func showPopupMessage(attributes: EKAttributes,
                                   title: String,
                                   titleColor: EKColor,

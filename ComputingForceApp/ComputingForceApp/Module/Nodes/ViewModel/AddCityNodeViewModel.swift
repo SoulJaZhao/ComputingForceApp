@@ -80,6 +80,25 @@ class AddCityNodeViewModel: BaseViewModel {
         }
         return isValidate
     }
+    
+    func requestAddCityNode() {
+        loadingEventSubject.send(.on)
+        nodesService.addCityNode(province: province ?? "", city: city ?? "", atributes: dataSource.attributeSection.rowViewModels)
+            .sink { [weak self] completion in
+                guard let self = self else { return }
+                self.loadingEventSubject.send(.off)
+                switch completion {
+                case .failure(_):
+                    self.alertEventSubject.send(.genericErrorAlert)
+                case .finished:
+                    self.alertEventSubject.send(.genericSuccessAlert)
+                }
+            } receiveValue: { _ in
+                
+            }
+            .store(in: &cancellables)
+
+    }
 }
 
 final class AddCityDataSource {

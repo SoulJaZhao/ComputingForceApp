@@ -44,7 +44,7 @@ class NodesListViewModel: BaseViewModel {
                 self.refreshHeaderSubject.send(.stop)
                 switch completion {
                 case .failure:
-                    self.alertEventSubject.send(.genericAlert)
+                    self.alertEventSubject.send(.genericErrorAlert)
                 case .finished:
                     break
                 }

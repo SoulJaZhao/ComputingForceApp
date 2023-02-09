@@ -28,3 +28,5 @@
 "Key" = "Key";
 "Value" = "Value";
 "Done" = "Done";
+"Success" = "Success";
+"SuccessfulDescription" = "Congratulations, the request was successful!";

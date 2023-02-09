@@ -20,7 +20,8 @@ class BaseViewModel {
     }
     
     enum AlertEvent {
-        case genericAlert
+        case genericErrorAlert
+        case genericSuccessAlert
     }
     
     func getXibName() -> String {

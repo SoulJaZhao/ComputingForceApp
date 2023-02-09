@@ -28,3 +28,5 @@
 "Key" = "键";
 "Value" = "值";
 "Done" = "完成";
+"Success" = "成功";
+"SuccessfulDescription" = "恭喜您，请求成功了!";

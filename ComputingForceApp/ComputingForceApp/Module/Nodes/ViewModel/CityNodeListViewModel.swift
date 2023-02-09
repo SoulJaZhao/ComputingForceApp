@@ -44,7 +44,7 @@ class CityNodeListViewModel: BaseViewModel {
                 switch completion {
                 case .failure(let error):
                     print(error)
-                    self.alertEventSubject.send(.genericAlert)
+                    self.alertEventSubject.send(.genericErrorAlert)
                 case .finished:
                     break
                 }
