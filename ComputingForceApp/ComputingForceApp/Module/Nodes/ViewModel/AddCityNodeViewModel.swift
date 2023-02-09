@@ -5,8 +5,12 @@
 //  Created by 赵龙 on 2023/2/8.
 //
 
-import Foundation
+import UIKit
 import Combine
+
+protocol AddCityNodeDelegate: AnyObject {
+    func didAddCityNode()
+}
 
 class AddCityNodeViewModel: BaseViewModel {
     
@@ -29,6 +33,7 @@ class AddCityNodeViewModel: BaseViewModel {
     
     @Published var province: String?
     @Published var city: String?
+    weak var delegate: AddCityNodeDelegate?
     
     let cityNodeChangedSubject: PassthroughSubject<Void, Never> = PassthroughSubject()
     lazy var isAddCityNodeEnablePublisher: AnyPublisher<Bool, Never> = {

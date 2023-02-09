@@ -13,8 +13,8 @@ class ActivityIndicatorManager {
     
     private let containerView: UIView
     private let activityIndicatorView: NVActivityIndicatorView
-    private var keyWindow: UIWindow {
-        AppContext.context.router.keyWindow
+    private var topMost: UIView {
+        UIViewController.topMost?.view ?? UIView()
     }
     
     private init() {
@@ -23,19 +23,16 @@ class ActivityIndicatorManager {
         let xPoint = (UIScreen.main.bounds.size.width - NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE.width) * 0.5
         let yPoint = (UIScreen.main.bounds.size.height - NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE.height) * 0.5
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: xPoint, y: yPoint), size: NVActivityIndicatorView.DEFAULT_BLOCKER_SIZE), type: .pacman, color: AppContext.context.theme.blackColor)
-        activityIndicatorView.isHidden = true
         containerView.addSubview(activityIndicatorView)
-        keyWindow.addSubview(containerView)
     }
     
     func startAnimation() {
-        containerView.isHidden = false
-        keyWindow.bringSubviewToFront(containerView)
+        topMost.addSubview(containerView)
         activityIndicatorView.startAnimating()
     }
     
     func stopAnimation() {
         activityIndicatorView.stopAnimating()
-        containerView.isHidden = true
+        containerView.removeFromSuperview()
     }
 }

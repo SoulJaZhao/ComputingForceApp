@@ -72,7 +72,11 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
                 case .genericErrorAlert:
                     self.showGenericErrorAlert()
                 case .genericSuccessAlert:
-                    self.showGenericSuccessAlert()
+                    self.showGenericSuccessAlert {
+                        self.dismiss(animated: true) {
+                            viewModel.delegate?.didAddCityNode()
+                        }
+                    }
                 }
             }
             .store(in: &cancellables)

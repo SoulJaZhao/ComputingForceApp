@@ -114,7 +114,7 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
                          image: image)
     }
     
-    func showGenericSuccessAlert() {
+    func showGenericSuccessAlert(completion:(()->Void)? = nil) {
         var attributes = EKAttributes.centerFloat
         attributes.hapticFeedbackType = .error
         attributes.displayDuration = .infinity
@@ -174,7 +174,8 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
                          descriptionColor: .subText,
                          buttonTitleColor: .white,
                          buttonBackgroundColor: .amber,
-                         image: image)
+                         image: image,
+                         completion: completion)
     }
     
     private func showPopupMessage(attributes: EKAttributes,
@@ -184,7 +185,8 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
                                   descriptionColor: EKColor,
                                   buttonTitleColor: EKColor,
                                   buttonBackgroundColor: EKColor,
-                                  image: UIImage? = nil) {
+                                  image: UIImage? = nil,
+                                  completion:(()->Void)? = nil) {
         
         var themeImage: EKPopUpMessage.ThemeImage?
         
@@ -239,6 +241,7 @@ class BaseViewController<ViewModelType: BaseViewModel>: UIViewController {
             description: description,
             button: button) {
                 SwiftEntryKit.dismiss()
+                completion?()
         }
         let contentView = EKPopUpMessageView(with: message)
         SwiftEntryKit.display(entry: contentView, using: attributes)

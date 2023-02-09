@@ -30,6 +30,8 @@ class NodesListViewModel: BaseViewModel {
     
     public var nodes: [CityNode] = []
     
+    private var addCityNodeViewModel: AddCityNodeViewModel?
+    
     func startFetchingData() {
         if AppContext.context.dependencyInjection.container.resolve(CredentialService.self)?.isLoggedIn == false || nodes.count > 0 {
             return
@@ -64,7 +66,15 @@ class NodesListViewModel: BaseViewModel {
     
     func getAddCityNodeViewController() -> AddCityNodeViewController {
         let viewModel = AddCityNodeViewModel()
+        addCityNodeViewModel = viewModel
+        addCityNodeViewModel?.delegate = self
         let viewController = AddCityNodeViewController(viewModel: viewModel)
         return viewController
+    }
+}
+
+extension NodesListViewModel: AddCityNodeDelegate {
+    func didAddCityNode() {
+        refreshHeaderSubject.send(.start)
     }
 }
