@@ -30,6 +30,20 @@ class AddCityNodeViewModel: BaseViewModel {
     @Published var province: String?
     @Published var city: String?
     
+    let cityNodeChangedSubject: PassthroughSubject<Void, Never> = PassthroughSubject()
+    lazy var isAddCityNodeEnablePublisher: AnyPublisher<Bool, Never> = {
+        cityNodeChangedSubject
+            .map { [weak self] in
+                guard let self = self, let city = self.city, let province = self.province else { return false }
+                if (city.isEmpty || province.isEmpty) {
+                    return false
+                }
+                return self.canAddRowViewModel()
+            }
+            .eraseToAnyPublisher()
+        
+    }()
+    
     override func getXibName() -> String {
         return "AddCityNodeViewController"
     }
@@ -41,7 +55,6 @@ class AddCityNodeViewModel: BaseViewModel {
     
     override init() {
         super.init()
-
     }
     
     func addRowViewModel() -> Bool {

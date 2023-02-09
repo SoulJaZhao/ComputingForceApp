@@ -25,6 +25,10 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
         self.title = Localization.text(key: "AddingCity")
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: Localization.text(key: "Close"), style: .plain, target: self, action: #selector(close))
+        self.navigationItem.leftBarButtonItem?.tintColor = .red
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: Localization.text(key: "Done"), style: .plain, target: self, action: #selector(addCityNode))
+        
         
         let nib = UINib(nibName: viewModel.dataSource.cellIdentifier, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: viewModel.dataSource.cellIdentifier)
@@ -55,10 +59,27 @@ class AddCityNodeViewController: BaseViewController<AddCityNodeViewModel> {
                 self.tableView.reloadData()
             }
             .store(in: &cancellables)
+        
+        viewModel.isAddCityNodeEnablePublisher
+            .receive(on: RunLoop.main)
+            .sink { isValidate in
+                if isValidate {
+                    self.navigationItem.rightBarButtonItem?.tintColor = UIColor.navigationBatItemColor
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                } else {
+                    self.navigationItem.rightBarButtonItem?.tintColor = UIColor.navigationBatItemDisabledColor
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                }
+            }
+            .store(in: &cancellables)
     }
     
     @objc func close() {
         self.dismiss(animated: true)
+    }
+    
+    @objc func addCityNode() {
+        print("add")
     }
 }
 
@@ -91,6 +112,7 @@ extension AddCityNodeViewController: UITableViewDataSource {
                 .receive(on: RunLoop.main)
                 .sink { content in
                     self.viewModel.province = content
+                    self.viewModel.cityNodeChangedSubject.send()
                 }
                 .store(in: &cancellables)
         case .city:
@@ -99,6 +121,7 @@ extension AddCityNodeViewController: UITableViewDataSource {
                 .receive(on: RunLoop.main)
                 .sink { content in
                     self.viewModel.city = content
+                    self.viewModel.cityNodeChangedSubject.send()
                 }
                 .store(in: &cancellables)
         case .attribute:
@@ -108,12 +131,14 @@ extension AddCityNodeViewController: UITableViewDataSource {
                 .receive(on: RunLoop.main)
                 .sink { content in
                     rowViewModel?.key = content
+                    self.viewModel.cityNodeChangedSubject.send()
                 }
                 .store(in: &cancellables)
             cell.secondaryTextField.textPublisher
                 .receive(on: RunLoop.main)
                 .sink { content in
                     rowViewModel?.value = content
+                    self.viewModel.cityNodeChangedSubject.send()
                 }
                 .store(in: &cancellables)
             
