@@ -30,3 +30,15 @@
 "Done" = "完成";
 "Success" = "成功";
 "SuccessfulDescription" = "恭喜您，请求成功了!";
+"NodeID" = "节点ID";
+"ElementID" = "元素ID";
+"Labels" = "标签";
+"Properties" = "属性";
+"GPU" = "GPU";
+"CPU" = "CPU";
+"ExtData" = "额外数据";
+"HardDisk" = "硬盘";
+"Memory" = "内存";
+"IP" = "IP";
+"OS" = "操作系统";
+"Name" = "名称";

@@ -76,6 +76,11 @@
 		21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F828B12972DD960094B995 /* CommonTextFieldCell.xib */; };
 		21F828B72972E50D0094B995 /* SignUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828B62972E50D0094B995 /* SignUpDataSource.swift */; };
 		21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F828B92972E90B0094B995 /* CollectionExtension.swift */; };
+		F14A5A8029962261006C8943 /* NodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A5A7E29962261006C8943 /* NodeViewController.swift */; };
+		F14A5A8129962261006C8943 /* NodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14A5A7F29962261006C8943 /* NodeViewController.xib */; };
+		F14A5A8329962283006C8943 /* NodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A5A8229962283006C8943 /* NodeViewModel.swift */; };
+		F14A5A8629962470006C8943 /* NodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A5A8429962470006C8943 /* NodeCell.swift */; };
+		F14A5A8729962470006C8943 /* NodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14A5A8529962470006C8943 /* NodeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +160,11 @@
 		2AE057A0E7E0C9A008695237 /* Pods-ComputingForceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.release.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.release.xcconfig"; sourceTree = "<group>"; };
 		482C5787E033E7B2B4B042D3 /* Pods_ComputingForceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputingForceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03147916932DCE5D7AD0A0D /* Pods-ComputingForceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputingForceApp.debug.xcconfig"; path = "Target Support Files/Pods-ComputingForceApp/Pods-ComputingForceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F14A5A7E29962261006C8943 /* NodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewController.swift; sourceTree = "<group>"; };
+		F14A5A7F29962261006C8943 /* NodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodeViewController.xib; sourceTree = "<group>"; };
+		F14A5A8229962283006C8943 /* NodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeViewModel.swift; sourceTree = "<group>"; };
+		F14A5A8429962470006C8943 /* NodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCell.swift; sourceTree = "<group>"; };
+		F14A5A8529962470006C8943 /* NodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NodeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,6 +534,8 @@
 				21CEF916298FEA92008351F6 /* CityNodeListViewController.xib */,
 				21BE30252993D5AC00377DFA /* AddCityNodeViewController.swift */,
 				21BE30262993D5AC00377DFA /* AddCityNodeViewController.xib */,
+				F14A5A7E29962261006C8943 /* NodeViewController.swift */,
+				F14A5A7F29962261006C8943 /* NodeViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -534,6 +546,7 @@
 				21CEF908298F61A8008351F6 /* NodesListViewModel.swift */,
 				21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */,
 				21BE30292993D5CA00377DFA /* AddCityNodeViewModel.swift */,
+				F14A5A8229962283006C8943 /* NodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -561,6 +574,8 @@
 				21CEF912298FBA2D008351F6 /* NodesListCell.xib */,
 				21CEF91B299133CD008351F6 /* CityNodeListCell.swift */,
 				21CEF91C299133CD008351F6 /* CityNodeListCell.xib */,
+				F14A5A8429962470006C8943 /* NodeCell.swift */,
+				F14A5A8529962470006C8943 /* NodeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -772,12 +787,14 @@
 				2110B2DC296DAA1F000B1B1C /* LandingViewController.xib in Resources */,
 				211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */,
 				21CEF918298FEA92008351F6 /* CityNodeListViewController.xib in Resources */,
+				F14A5A8729962470006C8943 /* NodeCell.xib in Resources */,
 				2110B3272971968E000B1B1C /* LaunchViewController.xib in Resources */,
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
 				21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */,
 				21BE30282993D5AC00377DFA /* AddCityNodeViewController.xib in Resources */,
 				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
+				F14A5A8129962261006C8943 /* NodeViewController.xib in Resources */,
 				21CEF907298F6191008351F6 /* NodesListViewController.xib in Resources */,
 				2155858D2993E70200B87A1D /* TextFieldsCell.xib in Resources */,
 				2118221F2965D37400BF8490 /* Assets.xcassets in Resources */,
@@ -843,6 +860,7 @@
 				21F828BA2972E90B0094B995 /* CollectionExtension.swift in Sources */,
 				21BE30242993B6E900377DFA /* UIView+Nib.swift in Sources */,
 				21BE30272993D5AC00377DFA /* AddCityNodeViewController.swift in Sources */,
+				F14A5A8029962261006C8943 /* NodeViewController.swift in Sources */,
 				2110B2C8296D9B9B000B1B1C /* AppContext.swift in Sources */,
 				21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */,
 				21CEF906298F6191008351F6 /* NodesListViewController.swift in Sources */,
@@ -853,6 +871,7 @@
 				21BE302A2993D5CA00377DFA /* AddCityNodeViewModel.swift in Sources */,
 				21F828A22971B1E50094B995 /* UIViewExtension.swift in Sources */,
 				21CEF90F298F6F16008351F6 /* NodesEntity.swift in Sources */,
+				F14A5A8329962283006C8943 /* NodeViewModel.swift in Sources */,
 				214945E72988B7FA005FEB6F /* AuthenticationService.swift in Sources */,
 				2110B2D5296DA7D9000B1B1C /* Router.swift in Sources */,
 				2110B32A29719C5B000B1B1C /* Theme.swift in Sources */,
@@ -878,6 +897,7 @@
 				2110B2FB29704357000B1B1C /* Localization.swift in Sources */,
 				211822182965D37300BF8490 /* SceneDelegate.swift in Sources */,
 				214945EB2988B8DE005FEB6F /* BaseService.swift in Sources */,
+				F14A5A8629962470006C8943 /* NodeCell.swift in Sources */,
 				21BE30202993B6E900377DFA /* CGRect+Utils.swift in Sources */,
 				21BE30222993B6E900377DFA /* Object+ClassName.swift in Sources */,
 				2110B30E297070AD000B1B1C /* IPAddressTool.swift in Sources */,

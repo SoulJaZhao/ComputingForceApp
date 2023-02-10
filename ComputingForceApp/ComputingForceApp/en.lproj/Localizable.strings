@@ -30,3 +30,15 @@
 "Done" = "Done";
 "Success" = "Success";
 "SuccessfulDescription" = "Congratulations, the request was successful!";
+"NodeID" = "Node ID";
+"ElementID" = "Element ID";
+"Labels" = "Labels";
+"Properties" = "Properties";
+"GPU" = "GPU";
+"CPU" = "CPU";
+"ExtData" = "ExtData";
+"HardDisk" = "Hard Disk";
+"Memory" = "Memory";
+"IP" = "IP";
+"OS" = "OS";
+"Name" = "Name";

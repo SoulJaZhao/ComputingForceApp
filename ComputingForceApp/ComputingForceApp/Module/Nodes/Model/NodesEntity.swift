@@ -24,7 +24,7 @@ struct Node: Decodable {
     public private(set) var properties: NodeProperty?
     
     private enum CodingKeys: String, CodingKey {
-        case nodeID         =   "id"
+        case nodeID         =   "Id"
         case elementId      =   "ElementId"
         case labels         =   "Labels"
         case properties     =   "Props"

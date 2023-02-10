@@ -85,6 +85,10 @@ extension CityNodeListViewController: UITableViewDataSource {
 extension CityNodeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        
+        guard let node = viewModel.nodes[safe: indexPath.row] else {
+            return
+        }
+        let viewController = viewModel.getNodeViewController(node: node)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

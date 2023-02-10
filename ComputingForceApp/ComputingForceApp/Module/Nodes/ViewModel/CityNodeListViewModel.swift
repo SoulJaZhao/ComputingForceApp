@@ -54,4 +54,10 @@ class CityNodeListViewModel: BaseViewModel {
             }
             .store(in: &cancellables)
     }
+    
+    func getNodeViewController(node: Node) -> NodeViewController {
+        let nodeViewModel = NodeViewModel(node: node)
+        let nodeViewController = NodeViewController(viewModel: nodeViewModel)
+        return nodeViewController
+    }
 }
