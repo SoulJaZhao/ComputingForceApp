@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol DeleteNodeDelegate: AnyObject {
+    func didDeleteNode()
+}
+
 class NodeViewModel: BaseViewModel {
     
     enum SectionType: Int {
@@ -68,6 +72,11 @@ class NodeViewModel: BaseViewModel {
     
     let cellIdentifier: String = "NodeCell"
     
+    let nodesService = NodesService()
+    private var cancellables = Set<AnyCancellable>()
+    
+    weak var delegate: DeleteNodeDelegate?
+    
     let node: Node
     
     init(node: Node) {
@@ -91,5 +100,24 @@ class NodeViewModel: BaseViewModel {
         case .none:
             return 0
         }
+    }
+    
+    func deleteNode() {
+        loadingEventSubject.send(.on)
+        nodesService.deleteNode(identifier: node.nodeID ?? 0)
+            .sink { [weak self] completion in
+                guard let self = self else { return }
+                self.loadingEventSubject.send(.off)
+                switch completion {
+                case .finished:
+                    self.alertEventSubject.send(.genericSuccessAlert)
+                case .failure(_):
+                    self.alertEventSubject.send(.genericErrorAlert)
+                }
+            } receiveValue: { [weak self] in
+                
+            }
+            .store(in: &cancellables)
+
     }
 }

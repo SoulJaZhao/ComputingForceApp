@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class NodeViewController: BaseViewController<NodeViewModel> {
     @IBOutlet weak var tableView: UITableView!
+    
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,7 @@ class NodeViewController: BaseViewController<NodeViewModel> {
 
     private func setupUI() {
         self.title = viewModel.node.properties?.name
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "bin.xmark"), style: .plain, target: self, action: #selector(deleteNode))
             
         let nib = UINib(nibName: viewModel.cellIdentifier, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: viewModel.cellIdentifier)
@@ -24,6 +28,41 @@ class NodeViewController: BaseViewController<NodeViewModel> {
         tableView.sectionHeaderHeight = 0.01
         tableView.sectionFooterHeight = 0.01
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func bind(viewModel: NodeViewModel, storeBindingsIn cancellables: inout Set<AnyCancellable>) {
+        super.bind(viewModel: viewModel, storeBindingsIn: &cancellables)
+        
+        viewModel.loadingEventSubject
+            .receive(on: RunLoop.main)
+            .sink { event in
+                switch event {
+                case .on:
+                    self.startLoading()
+                case .off:
+                    self.stopLoading()
+                }
+            }
+            .store(in: &cancellables)
+        
+        viewModel.alertEventSubject
+            .receive(on: RunLoop.main)
+            .sink { event in
+                switch event {
+                case .genericErrorAlert:
+                    self.showGenericErrorAlert()
+                case .genericSuccessAlert:
+                    self.showGenericSuccessAlert {
+                        self.navigationController?.popViewController(animated: true)
+                        viewModel.delegate?.didDeleteNode()
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    @objc private func deleteNode() {
+        viewModel.deleteNode()
     }
 }
 

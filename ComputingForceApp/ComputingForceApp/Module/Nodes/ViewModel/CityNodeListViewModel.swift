@@ -18,6 +18,8 @@ class CityNodeListViewModel: BaseViewModel {
     let cellIdentifier = "CityNodeListCell"
     private var cancellables = Set<AnyCancellable>()
     
+    private var nodeViewModel: NodeViewModel?
+    
     private var refreshHeaderSubject = PassthroughSubject<RefreshHeaderEvent, Never>()
     lazy var refreHeaderPublisher: AnyPublisher<RefreshHeaderEvent, Never> = {
         return refreshHeaderSubject.eraseToAnyPublisher()
@@ -56,8 +58,18 @@ class CityNodeListViewModel: BaseViewModel {
     }
     
     func getNodeViewController(node: Node) -> NodeViewController {
-        let nodeViewModel = NodeViewModel(node: node)
-        let nodeViewController = NodeViewController(viewModel: nodeViewModel)
+        nodeViewModel = NodeViewModel(node: node)
+        guard let viewModel = nodeViewModel else {
+            fatalError()
+        }
+        viewModel.delegate = self
+        let nodeViewController = NodeViewController(viewModel: viewModel)
         return nodeViewController
+    }
+}
+
+extension CityNodeListViewModel: DeleteNodeDelegate {
+    func didDeleteNode() {
+        self.refreshHeaderSubject.send(.start)
     }
 }

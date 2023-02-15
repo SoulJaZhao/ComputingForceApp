@@ -13,6 +13,7 @@ enum NodeAPI {
     case sumAllCity
     case findNodes(cityNode: CityNode)
     case insertCity(province: String, city: String, attribute: [String : Any])
+    case deleteNode(identifier: Int)
 }
 
 extension NodeAPI : TargetType {
@@ -33,6 +34,8 @@ extension NodeAPI : TargetType {
             return "/api/\(AppContext.context.environment.version.rawValue)/neo4j/find/byCity"
         case .insertCity:
             return "/api/\(AppContext.context.environment.version.rawValue)/neo4j/insert/city"
+        case .deleteNode(identifier: _):
+            return "/api/\(AppContext.context.environment.version.rawValue)/neo4j/delete/item"
         }
     }
     
@@ -42,6 +45,8 @@ extension NodeAPI : TargetType {
             return .get
         case .insertCity:
             return .post
+        case .deleteNode(identifier: _):
+            return .delete
         }
     }
     
@@ -58,6 +63,8 @@ extension NodeAPI : TargetType {
                 "attribute" :   attribute
             ]
             return .requestParameters(parameters: dict, encoding: JSONEncoding.default)
+        case .deleteNode(identifier: let identifier):
+            return .requestParameters(parameters: ["id" : identifier], encoding: JSONEncoding.default)
         }
     }
     
@@ -112,5 +119,9 @@ class NodesService: NetworkServiceProtocol {
         
         return self.excute(target: .insertCity(province: province, city: city, attribute: attributeDict), responseModel: [String].self)
             .eraseToAnyPublisher()
+    }
+    
+    func deleteNode(identifier: Int) -> AnyPublisher<Void, APIError> {
+        return self.excuteWithoutResponse(target: .deleteNode(identifier: identifier))
     }
 }
