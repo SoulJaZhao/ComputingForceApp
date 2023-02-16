@@ -67,6 +67,10 @@
 		21CEF91A298FEB01008351F6 /* CityNodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */; };
 		21CEF91D299133CD008351F6 /* CityNodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEF91B299133CD008351F6 /* CityNodeListCell.swift */; };
 		21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CEF91C299133CD008351F6 /* CityNodeListCell.xib */; };
+		21D5CA41299E6FB30013FFA5 /* Landing1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21D5CA40299E6FB30013FFA5 /* Landing1.gif */; };
+		21D5CA43299E6FBC0013FFA5 /* Landing2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21D5CA42299E6FBC0013FFA5 /* Landing2.gif */; };
+		21D5CA45299E6FC20013FFA5 /* Landing3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21D5CA44299E6FC20013FFA5 /* Landing3.gif */; };
+		21D5CA47299E6FCE0013FFA5 /* Landing4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21D5CA46299E6FCE0013FFA5 /* Landing4.gif */; };
 		21E668092965E4900061AE89 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E668082965E4900061AE89 /* BaseNavigationController.swift */; };
 		21F8289C2971ABD40094B995 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289B2971ABD40094B995 /* UIImageExtension.swift */; };
 		21F8289F2971ACB00094B995 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F8289E2971ACB00094B995 /* UIColorExtension.swift */; };
@@ -148,6 +152,10 @@
 		21CEF919298FEB01008351F6 /* CityNodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListViewModel.swift; sourceTree = "<group>"; };
 		21CEF91B299133CD008351F6 /* CityNodeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNodeListCell.swift; sourceTree = "<group>"; };
 		21CEF91C299133CD008351F6 /* CityNodeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityNodeListCell.xib; sourceTree = "<group>"; };
+		21D5CA40299E6FB30013FFA5 /* Landing1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Landing1.gif; sourceTree = "<group>"; };
+		21D5CA42299E6FBC0013FFA5 /* Landing2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Landing2.gif; sourceTree = "<group>"; };
+		21D5CA44299E6FC20013FFA5 /* Landing3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Landing3.gif; sourceTree = "<group>"; };
+		21D5CA46299E6FCE0013FFA5 /* Landing4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Landing4.gif; sourceTree = "<group>"; };
 		21E668082965E4900061AE89 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		21F8289B2971ABD40094B995 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		21F8289E2971ACB00094B995 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -650,6 +658,10 @@
 		21F828A92972BB220094B995 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				21D5CA46299E6FCE0013FFA5 /* Landing4.gif */,
+				21D5CA44299E6FC20013FFA5 /* Landing3.gif */,
+				21D5CA42299E6FBC0013FFA5 /* Landing2.gif */,
+				21D5CA40299E6FB30013FFA5 /* Landing1.gif */,
 				21F828A62972BAFD0094B995 /* Landing0.gif */,
 			);
 			path = Landing;
@@ -781,8 +793,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D5CA41299E6FB30013FFA5 /* Landing1.gif in Resources */,
 				21CEF914298FBA2D008351F6 /* NodesListCell.xib in Resources */,
 				2110B2FF29704939000B1B1C /* Localizable.strings in Resources */,
+				21D5CA47299E6FCE0013FFA5 /* Landing4.gif in Resources */,
 				2110B2E9297011BB000B1B1C /* LoginViewController.xib in Resources */,
 				2110B2DC296DAA1F000B1B1C /* LandingViewController.xib in Resources */,
 				211822222965D37400BF8490 /* LaunchScreen.storyboard in Resources */,
@@ -791,6 +805,8 @@
 				2110B3272971968E000B1B1C /* LaunchViewController.xib in Resources */,
 				21F828A72972BAFD0094B995 /* Landing0.gif in Resources */,
 				21CEF91E299133CD008351F6 /* CityNodeListCell.xib in Resources */,
+				21D5CA43299E6FBC0013FFA5 /* Landing2.gif in Resources */,
+				21D5CA45299E6FC20013FFA5 /* Landing3.gif in Resources */,
 				21BE30282993D5AC00377DFA /* AddCityNodeViewController.xib in Resources */,
 				21F828B32972DD960094B995 /* CommonTextFieldCell.xib in Resources */,
 				2110B30A29704C02000B1B1C /* SignUpViewController.xib in Resources */,
